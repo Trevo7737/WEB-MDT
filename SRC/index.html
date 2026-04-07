@@ -9,9 +9,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=alternate_email" />
-
     <style>
         * {
             margin: auto;
@@ -20,7 +17,7 @@
     </style>
 </head>
 
-<body class="relative w-full h-screen">
+<body class=" w-full h-screen font-poppins">
     <!-- Orb container -->
     <div class="absolute w-screen h-screen overflow-hidden -z-10">
 
@@ -54,38 +51,50 @@
         <button class="uppercase border-none px-7 py-2.5 rounded-2xl bg-amber-600 font-semibold cursor-pointer">log
             in</button>
     </div>
-    <!-- ------------------------------------- -->
+
+    <!-- --------------------------------------->
     <!-- the part of log in form  -->
-    <div class=" container max-w-1/2 absolute h-[70vh] rounded-tl-[20px] rounded-bl-[20px]  inset-0  bg-white/3 backdrop-blur-[20px] border border-white/10 border-t-white/20 border-l-white/20
-         shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5),inset_0_0_0_1px_rgba(255,255,255,0.05)] flex ">
-        <div class="bg  w-1/2 h-full px-10 py-10">
-            <div class="login font-poppins w-full h-auto text-center [&>span]:text-gray-400 ">
-                <h1 class="text-5xl font-semibold uppercase">welcome back</h1>
+
+    <div class=" container max-w-1/2  relative  h-[70vh] rounded-tl-[20px] rounded-bl-[20px]  top-20
+         bg-white/3 backdrop-blur-[20px] border border-white/10 border-t-white/20 border-l-white/20
+         shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5),inset_0_0_0_1px_rgba(255,255,255,0.05)] flex">
+
+        <div class=" w-1/2 h-full    rounded-tl-[20px] rounded-bl-[20px]  flex flex-col ">
+            <div class="Title w-full h-auto font-poppins  text-left [&>span]:text-gray-400 px-10 ">
+                <h1 class="text-3xl font-semibold uppercase text-blue-950">welcome back,</h1>
                 <span>Enter your Credentials to access your account</span>
             </div>
             <div
-                class="form-login  relative  w-full h-[50vh] [&>div>label]:font-medium  [&>div>label]:text-[18px] [&>div>label]:text-gray-900 [&>div>input]:outline-none bg-amber-500 ">
-                <div class="relative z-0 w-full mb-5 group">
-                    <input type="email" name="floating_email" id="floating_email"
-                        class="block py-2.5 px-0 w-full text-sm text-heading bg-transparent border-0 border-b-2 border-default-medium appearance-none focus:outline-none focus:ring-0 focus:border-brand peer"
+                class="form-login w-full h-[50vh] 
+                px-10
+                [&>div>label]:font-medium [&>div>label]:text-[18px] [&>div>label]:text-gray-300 [&>div>input]:outline-none
+                [&>.outer-container]:absolute [&>.out-container]:w-full  [&>.out-container]:flex [&>.out-container]:relative ">
+                <!-- email-input -->
+                <div class="out-container block  h-25 ">
+                    <input type="email" name="email" id="email"
+                        class="  w-full text-[18px] text-heading bg-transparent border-0 border-b-2  border-b-blue-800 border-default-medium appearance-none focus:outline-none focus:ring-0 focus:border-brand peer"
                         placeholder=" " required />
-                    <label for="floating_email"
-                        class="absolute text-sm text-body duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-left peer-focus:s-0 peer-focus:text-fg-brand peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Email
-                        address</label>
-                    <span class="material-symbols-outlined absolute top-[45%] left-11/12  text-gray-400">alternate_email
-                    </span>
+                    <label for="email"
+                        class="  absolute text-sm text-left text-body duration-300 transform -translate-y-6  top-8 scale-75 origin-left peer-focus:s-0 peer-focus:text-fg-brand peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:text-blue-950 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Email</label>
+                    <i class="fa-light fa-at"></i>
                 </div>
-                <div
-                    class="input-box absolute top-1/2 w-full [&>input]:border-b-2 [&>input]:border-b-gray-200 [&>input]:w-full  [&>label]:top-[45%]">
-                    <label for="password" class="absolute">Password</label>
-                    <i class="fa-solid fa-lock absolute top-1/2 left-11/12 text-gray-400 "></i>
-                    <br>
-                    <input type="password" name="password" id="password">
+
+                <!-- password-input -->
+                <div class="out-container  block  h-25 ">
+                    <input type="password" name="password" id="password"
+                        class=" w-full text-[18px] text-heading bg-transparent border-0 border-b-2 border-b-blue-800 border-default-medium appearance-none focus:outline-none focus:ring-0 focus:border-brand peer"
+                        placeholder=" " required />
+                    <label for="password"
+                        class="absolute text-[20px] text-body duration-300 transform -translate-y-6 scale-75 top-8 origin-left peer-focus:s-0 peer-focus:text-fg-brand peer-placeholder-shown:scale-100 peer-focus:text-blue-950 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Password</label>
+                    <i class="fa-light fa-lock"></i>
+                </div>
+                <div class="btn-submit block text-center">
+                    <button class=" border">button</button>
                 </div>
             </div>
         </div>
-        <div
-            class="img-lefthand  w-1/2 h-[70vh] bg-[url(../iMG/img1.jpg)] bg-center bg-cover bg-no-repeat rounded-tl-4xl  rounded-bl-4xl">
+        <div class="img-lefthand  w-1/2 h-[70vh] bg-[url(../iMG/img1.jpg)] bg-center bg-cover bg-no-repeat 
+            rounded-tl-4xl  rounded-bl-4xl">
             <!-- image in background-image  -->
         </div>
     </div>
