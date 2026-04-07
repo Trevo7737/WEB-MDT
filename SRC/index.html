@@ -46,7 +46,6 @@
             <a href="#">home</a>
             <a href="#">about</a>
             <a href="#">services</a>
-
         </nav>
         <button class="uppercase border-none px-7 py-2.5 rounded-2xl bg-amber-600 font-semibold cursor-pointer">log
             in</button>
@@ -59,18 +58,21 @@
          bg-white/3 backdrop-blur-[20px] border border-white/10 border-t-white/20 border-l-white/20
          shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5),inset_0_0_0_1px_rgba(255,255,255,0.05)] flex">
 
-        <div class=" w-1/2 h-full    rounded-tl-[20px] rounded-bl-[20px]  flex flex-col ">
+        <div class=" w-1/2 h-full    rounded-tl-[20px] rounded-bl-[20px]  flex flex-wrap">
             <div class="Title w-full h-auto font-poppins  text-left [&>span]:text-gray-400 px-10 ">
                 <h1 class="text-3xl font-semibold uppercase text-blue-950">welcome back,</h1>
                 <span>Enter your Credentials to access your account</span>
             </div>
             <div
-                class="form-login w-full h-[50vh] 
-                px-10
+                class="form-login w-100 h-[50vh] 
+                px-10    border  border-gray-400 rounded-[5px]
                 [&>div>label]:font-medium [&>div>label]:text-[18px] [&>div>label]:text-gray-300 [&>div>input]:outline-none
-                [&>.outer-container]:absolute [&>.out-container]:w-full  [&>.out-container]:flex [&>.out-container]:relative ">
+                [&>.outer-container]:absolute [&>.out-container]:w-full  [&>.out-container]:flex [&>.out-container]:relative  ">
                 <!-- email-input -->
-                <div class="out-container block  h-25 ">
+                <div class="login-word text-2xl text-center py-2.5 font-bold capitalize">
+                    <span>login form</span>
+                </div>
+                <div class="out-container   h-25  ">
                     <input type="email" name="email" id="email"
                         class="  w-full text-[18px] text-heading bg-transparent border-0 border-b-2  border-b-blue-800 border-default-medium appearance-none focus:outline-none focus:ring-0 focus:border-brand peer"
                         placeholder=" " required />
@@ -80,7 +82,7 @@
                 </div>
 
                 <!-- password-input -->
-                <div class="out-container  block  h-25 ">
+                <div class="out-container h-25 ">
                     <input type="password" name="password" id="password"
                         class=" w-full text-[18px] text-heading bg-transparent border-0 border-b-2 border-b-blue-800 border-default-medium appearance-none focus:outline-none focus:ring-0 focus:border-brand peer"
                         placeholder=" " required />
@@ -88,13 +90,28 @@
                         class="absolute text-[20px] text-body duration-300 transform -translate-y-6 scale-75 top-8 origin-left peer-focus:s-0 peer-focus:text-fg-brand peer-placeholder-shown:scale-100 peer-focus:text-blue-950 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Password</label>
                     <i class="fa-light fa-lock"></i>
                 </div>
-                <div class="btn-submit block text-center">
-                    <button class=" border">button</button>
+                <div class="forget-password w-full flex gap-20  ">
+                    <div class="check ">
+                        <input type="checkbox">
+                        <span>Remember</span>
+                    </div>
+                    <div class="title hover:underline cursor-pointer hover:text-blue-600">
+                        <span>forgot password</span>
+                    </div>
+                </div>
+                <div class="btn-submit block text-center py-10">
+                    <button
+                        class=" border w-full px-2.5 py-2.5  cursor-pointer rounded-2xl font-bold hover:bg-blue-950 hover:text-gray-300  uppercase">log
+                        in</button>
+                </div>
+                <div
+                    class="create-account text-center font-bold uppercase hover:underline cursor-pointer hover:text-blue-600">
+                    <p>Register a new Account </p>
                 </div>
             </div>
         </div>
         <div class="img-lefthand  w-1/2 h-[70vh] bg-[url(../iMG/img1.jpg)] bg-center bg-cover bg-no-repeat 
-            rounded-tl-4xl  rounded-bl-4xl">
+            rounded-tl-4xl  rounded-bl-4xl  bg-amber-400">
             <!-- image in background-image  -->
         </div>
     </div>
