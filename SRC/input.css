@@ -21,3 +21,12 @@
     transform: translate(50px, 50px) scale(1.1);
   }
 }
+
+.display-login {
+  display: none;
+}
+
+.interact {
+  display: block;
+  opacity: 1;
+}
