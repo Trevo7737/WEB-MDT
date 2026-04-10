@@ -21,12 +21,24 @@
     transform: translate(50px, 50px) scale(1.1);
   }
 }
-
-.display-login {
-  display: none;
+/* -------------display-login--------------- */
+.container-login {
+  visibility: hidden;
+  /* transform: scale(1, 0); */
+  transform: translatey(-100%);
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
 }
 
-.interact {
-  display: block;
+.active {
+  visibility: visible;
+  transition: all 0.3s ease-in-out;
+  transform: translatey(0%);
+  opacity: 1;
+}
+/* ------------------------- */
+
+.active2 {
+  transform: translatey(0%);
   opacity: 1;
 }

@@ -56,22 +56,23 @@
 
     <!-- --------------------------------------->
     <!-- the part of log in form  -->
-    <div class="display-login ">
-        <div class=" max-w-1/2  relative  h-[80vh] rounded-[20px] top-10 
+    <div class="container-login max-w-1/2  relative  h-[80vh] rounded-[20px] top-10 
          bg-white/3 backdrop-blur-[20px] border border-white/10 border-t-white/20 border-l-white/20
-         shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5),inset_0_0_0_1px_rgba(255,255,255,0.05)] flex">
+         shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5),inset_0_0_0_1px_rgba(255,255,255,0.05)] flex" id="container-login">
 
-            <div class=" w-1/2 h-full rounded-tl-[20px] rounded-bl-[20px]  flex flex-wrap">
-                <div class=" w-full h-auto font-poppins  text-left [&>span]:text-gray-400 px-10  " id="title">
-                    <h1 class="text-3xl font-semibold uppercase text-blue-950">welcome back,</h1>
-                    <span>Enter your Credentials to access your account</span>
-                </div>
-                <div class=" w-100 h-[60vh] 
-                px-10 py-10 border border-gray-400 rounded-[5px]
+        <div class=" w-1/2 h-full rounded-tl-[20px] rounded-bl-[20px]  flex flex-wrap">
+            <div class=" w-full h-auto font-poppins  text-left [&>span]:text-gray-400 px-10  " id="title">
+                <h1 class="text-3xl font-semibold uppercase text-blue-950">welcome back,</h1>
+                <span>Enter your Credentials to access your account</span>
+            </div>
+            <!-- login-part -->
+            <div class="form-login">
+                <div
+                    class=" w-100 h-[60vh]
+                px-10 py-10 border border-gray-400 rounded-[5px] 
                 [&>div>label]:font-medium [&>div>label]:text-[18px] [&>div>label]:text-gray-300 [&>div>input]:outline-none
-                [&>.outer-container]:absolute [&>.out-container]:w-full  [&>.out-container]:flex [&>.out-container]:relative"
-                    id="form-login">
-                    <!-- email-input -->
+                [&>.outer-container]:absolute [&>.out-container]:w-full  [&>.out-container]:flex [&>.out-container]:relative">
+                    <!-- email-input-section -->
                     <div class=" text-2xl text-center py-2.5 font-bold capitalize" id="login-title">
                         <span>login form</span>
                     </div>
@@ -79,19 +80,22 @@
                         <input type="email" name="email" id="email"
                             class="  w-full text-[18px] text-heading bg-transparent border-0 border-b-2  border-b-blue-800 border-default-medium appearance-none focus:outline-none focus:ring-0 focus:border-brand peer"
                             placeholder=" " required />
+                        <span id="show"></span>
                         <label for="email"
                             class="  absolute text-sm text-left text-body duration-300 transform -translate-y-6  top-8 scale-75 origin-left peer-focus:s-0 peer-focus:text-fg-brand peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:text-blue-950 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Email</label>
                         <i class="fa-solid fa-at absolute top-8 left-[90%] text-2xl text-gray-500 "></i>
                     </div>
-                    <!-- password-input -->
+                    <!-- password-input-section -->
                     <div class="out-container h-25 ">
                         <input type="password" name="password" id="password"
                             class=" w-full text-[18px] text-heading bg-transparent border-0 border-b-2 border-b-blue-800 border-default-medium appearance-none focus:outline-none focus:ring-0 focus:border-brand peer"
                             placeholder=" " required />
+                        <span id="show"></span>
                         <label for="password"
                             class="absolute text-[20px] text-body duration-300 transform -translate-y-6 scale-75 top-8 origin-left peer-focus:s-0 peer-focus:text-fg-brand peer-placeholder-shown:scale-100 peer-focus:text-blue-950 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Password</label>
                         <i class="fa-solid fa-lock absolute top-10 left-[90%] text-gray-500"></i>
                     </div>
+                    <!-- section-forgotpassword -->
                     <div class=" forget-password w-full flex gap-19 ">
                         <div class=" check ">
                             <input type="checkbox">
@@ -106,43 +110,24 @@
                             class=" border w-full px-2.5 py-2.5  cursor-pointer rounded-2xl font-bold hover:bg-blue-950 hover:text-gray-300  uppercase">log
                             in</button>
                     </div>
-                    <div class="create-account font-bold  flex px-5 ">
-                        <p class="capitalize">Don't have an account ?</p>
-                        <span
-                            class=" sing-in font-medium cursor-pointer hover:text-blue-600 hover:underline">Register</span>
-                    </div>
-
+                    <p class="capitalize cursor-alias font-bold  flex px-5 ">
+                        Don't have an account ?
+                        <button class="register font-medium cursor-pointer border-none hover:underline "
+                            onclick="showregister()">
+                            Register
+                        </button>
+                    </p>
                 </div>
-                <p>&copy; 2026.Created By @Spanha Original Form .</p>
             </div>
-            <div class="img-lefthand  w-1/2 h-[70vh] bg-[url(../iMG/img1.jpg)] bg-center bg-cover bg-no-repeat 
-            rounded-tl-4xl  rounded-bl-4xl ">
-                <!-- image on right part  -->
-            </div>
-        </div>
-    </div>
-    <!-- end-section-log-in-form -->
-    <!--------------------------------------->
-    <!-- The part of register form  -->
-    <div class="display-register hidden">
-        <div class=" max-w-1/2  relative  h-[80vh] rounded-[20px]   top-10
-         bg-white/3 backdrop-blur-[20px] border border-white/10 border-t-white/20 border-l-white/20
-         shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5),inset_0_0_0_1px_rgba(255,255,255,0.05)] flex " id="container">
-
-            <div class=" w-1/2 h-full    rounded-tl-[20px] rounded-bl-[20px]  flex flex-wrap">
-                <div class=" w-full h-auto font-poppins  text-left [&>span]:text-gray-400 px-10  " id="title">
-                    <h1 class="text-3xl font-semibold uppercase text-blue-950">welcome back,</h1>
-                    <span>Enter your Credentials to access your account</span>
-                </div>
-                <div class="absolute flex top-5 left-[87%] cursor-pointer gap-1 text-[20px] backlogin">
-                    <i class="fa-solid fa-arrow-left"></i>
-                    <p>Back</p>
-                </div>
-                <div class=" w-100 h-[65vh] 
+            <!-- end-section-log-in-form -->
+            <!--------------------------------------->
+            <!-- The part of register form  -->
+            <div class="form-register">
+                <div
+                    class=" w-100 h-[65vh] 
                     px-10 py-10  border border-gray-400 rounded-[5px]
                     [&>div>label]:font-medium [&>div>label]:text-[18px] [&>div>label]:text-gray-300 [&>div>input]:outline-none
-                    [&>.outer-container]:absolute [&>.out-container]:w-full  [&>.out-container]:flex [&>.out-container]:relative"
-                    id="form-login">
+                    [&>.outer-container]:absolute [&>.out-container]:w-full  [&>.out-container]:flex [&>.out-container]:relative">
                     <div class=" text-2xl text-center py-2.5 font-bold capitalize" id="login-title">
                         <span>Register form</span>
                     </div>
@@ -154,6 +139,7 @@
                         <label for="email"
                             class="  absolute text-sm text-left text-body duration-300 transform -translate-y-6  top-8 scale-75 origin-left peer-focus:s-0 peer-focus:text-fg-brand peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:text-blue-950 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Email</label>
                         <i class="fa-solid fa-at absolute top-8 left-[90%] text-2xl text-gray-500 "></i>
+                        <span id="show"></span>
                     </div>
                     <!-- password-input -->
                     <div class="out-container h-25 ">
@@ -163,11 +149,14 @@
                         <label for="password"
                             class="absolute text-[20px] text-body duration-300 transform -translate-y-6 scale-75 top-8 origin-left peer-focus:s-0 peer-focus:text-fg-brand peer-placeholder-shown:scale-100 peer-focus:text-blue-950 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Password</label>
                         <i class="fa-solid fa-lock absolute top-8 left-[90%] text-2xl text-gray-500 "></i>
+                        <span id="show"></span>
                     </div>
+                    <!-- re-password -->
                     <div class="out-container h-25 ">
                         <input type="password" name="password" id="password"
                             class=" w-full text-[18px] text-heading bg-transparent border-0 border-b-2 border-b-blue-800 border-default-medium appearance-none focus:outline-none focus:ring-0 focus:border-brand peer"
                             placeholder=" " required />
+                        <span id="show"></span>
                         <label for="password"
                             class="absolute text-[20px] text-body duration-300 transform -translate-y-6 scale-75 top-8 origin-left peer-focus:s-0 peer-focus:text-fg-brand peer-placeholder-shown:scale-100 peer-focus:text-blue-950 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Re-Password</label>
                         <i class="fa-solid fa-lock absolute top-8 left-[90%] text-2xl text-gray-500 "></i>
@@ -186,21 +175,26 @@
                     <div class="btn-submit block text-center py-10">
                         <button
                             class=" border w-full px-2.5 py-2.5  cursor-pointer rounded-2xl font-bold hover:bg-blue-950 hover:text-gray-300  uppercase">log
-                            in</button>
+                            in
+                        </button>
                     </div>
                     <!-- ----------------------------- -->
                     <div class="create-account font-bold  flex px-3 ">
                         <p class="capitalize">Already have an Account ?</p>
-                        <span class=" sing-in font-medium cursor-pointer hover:text-blue-600 hover:underline">Sing
-                            in</span>
+                        <button class=" sing-in font-medium cursor-pointer hover:text-blue-600 hover:underline"
+                            id="sing-in">Sing
+                            in
+                        </button>
                     </div>
                 </div>
-                <p>&copy; 2026.Created By @Spanha Original Form .</p>
             </div>
-            <div class="img-lefthand  w-1/2 h-[70vh] bg-[url(../iMG/img1.jpg)] bg-center bg-cover bg-no-repeat 
+            <!-- --------------------------------------- -->
+            <p>&copy; 2026.Created By @Spanha Original Form .</p>
+        </div>
+
+        <div class="img-lefthand  w-1/2 h-[70vh] bg-[url(../iMG/img1.jpg)] bg-center bg-cover bg-no-repeat 
             rounded-tl-4xl  rounded-bl-4xl ">
-                <!-- image on right part  -->
-            </div>
+            <!-- image on right part  -->
         </div>
     </div>
 
