@@ -66,7 +66,7 @@
                 <span>Enter your Credentials to access your account</span>
             </div>
             <!-- login-part -->
-            <div class="form-login">
+            <div class="form-login" id="form-login">
                 <div
                     class=" w-100 h-[60vh]
                 px-10 py-10 border border-gray-400 rounded-[5px] 
@@ -112,8 +112,7 @@
                     </div>
                     <p class="capitalize cursor-alias font-bold  flex px-5 ">
                         Don't have an account ?
-                        <button class="register font-medium cursor-pointer border-none hover:underline "
-                            onclick="showregister()">
+                        <button class="register font-medium cursor-pointer border-none hover:underline">
                             Register
                         </button>
                     </p>
@@ -122,9 +121,9 @@
             <!-- end-section-log-in-form -->
             <!--------------------------------------->
             <!-- The part of register form  -->
-            <div class="form-register">
+            <div class="form-register" id="form-register">
                 <div
-                    class=" w-100 h-[65vh] 
+                    class=" w-100 h-[65vh]
                     px-10 py-10  border border-gray-400 rounded-[5px]
                     [&>div>label]:font-medium [&>div>label]:text-[18px] [&>div>label]:text-gray-300 [&>div>input]:outline-none
                     [&>.outer-container]:absolute [&>.out-container]:w-full  [&>.out-container]:flex [&>.out-container]:relative">
@@ -174,7 +173,7 @@
                     </div>
                     <div class="btn-submit block text-center py-10">
                         <button
-                            class=" border w-full px-2.5 py-2.5  cursor-pointer rounded-2xl font-bold hover:bg-blue-950 hover:text-gray-300  uppercase">log
+                            class=" border-2 w-full px-2.5 py-2.5  cursor-pointer rounded-2xl font-bold hover:bg-blue-950 hover:text-gray-300  uppercase">log
                             in
                         </button>
                     </div>

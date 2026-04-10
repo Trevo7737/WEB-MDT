@@ -42,3 +42,10 @@
   transform: translatey(0%);
   opacity: 1;
 }
+
+.form-login {
+  display: block;
+}
+.form-register {
+  display: none;
+}
