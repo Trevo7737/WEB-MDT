@@ -46,6 +46,13 @@
 .form-login {
   display: block;
 }
-.form-register {
+
+.form-singup {
   display: none;
+}
+
+/* back to login btn */
+
+.backlogin {
+  visibility: hidden;
 }
