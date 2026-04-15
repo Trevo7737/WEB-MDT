@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-
     <style>
         * {
             margin: auto;
@@ -41,13 +40,13 @@
     <div class="container flex justify-between rounded-[20px]  bg-white/3 backdrop-blur-[50px]  border-white/10 border-t-white/20
          border-l-white/20 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5),inset_0_0_0_1px_rgba(255,255,255,0.05)]  p-4">
         <div class="icon uppercase  text-amber-600 font-semibold">
-            <!-- <img src="../iMG/setec.png" alt="" class="w-50"> -->
+            <img src="../iMG/setec.png" alt="" class="w-50">
         </div>
-        <nav class="flex items-center justify-center  gap-2.5  font-poppins  text-[20px]  uppercase  w-1/2 h-auto">
+        <!-- <nav class="flex items-center justify-center  gap-2.5  font-poppins  text-[20px]  uppercase  w-1/2 h-auto">
             <a href="#">home</a>
             <a href="#">about</a>
             <a href="#">services</a>
-        </nav>
+        </nav> -->
         <button class=" relative  overflow-hidden uppercase border px-7 py-2.5 rounded-2xl font-semibold cursor-pointer border-amber-400 
             [transition:all_0.4s_ease] hover:bg-amber-400 hover:text-white" id="login-btn">
             log in
@@ -61,26 +60,29 @@
          shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5),inset_0_0_0_1px_rgba(255,255,255,0.05)] flex" id="container-login">
 
         <div class=" w-1/2 h-full rounded-tl-[20px] rounded-bl-[20px]  flex flex-wrap">
-            <div class=" w-full h-auto font-poppins  text-left [&>span]:text-gray-400 px-10  " id="title">
+            <div class=" w-full h-auto font-poppins  text-left [&>span]:text-gray-400 px-10 py-5 " id="title">
                 <h1 class="text-3xl font-semibold uppercase text-blue-950">welcome back,</h1>
                 <span>Enter your Credentials to access your account</span>
             </div>
+            <button class="absolute flex top-5 left-[95%] cursor-pointer gap-1 text-[20px]  closeform" id="closeform">
+                <i class="fa-solid fa-x "></i>
+            </button>
             <button class="absolute flex top-5 left-[87%] cursor-pointer gap-1 text-[20px]  backlogin" id="backlogin">
                 <i class="fa-solid fa-arrow-left"></i>
                 Back
             </button>
             <!-- login-part -->
-            <div class="form-login" id="form-login">
-                <div
+            <div class="form-login" id="form-login" class="form">
+                <form id="login"
                     class=" w-100 h-[60vh]
                 px-10 py-10 border border-gray-400 rounded-[5px] 
                 [&>div>label]:font-medium [&>div>label]:text-[18px] [&>div>label]:text-gray-300 [&>div>input]:outline-none
-                [&>.outer-container]:absolute [&>.out-container]:w-full  [&>.out-container]:flex [&>.out-container]:relative">
-                    <!-- email-input-section -->
-                    <div class=" text-2xl text-center py-2.5 font-bold capitalize" id="login-title">
+                [&>.outer-container]:absolute [&>.out-container]:w-full [&>.out-container]:text-center  [&>.out-container]:flex [&>.out-container]:relative">
+                    <!-- email-login -->
+                    <div class=" text-2xl text-center py-10  font-bold capitalize" id="login-title">
                         <span>login form</span>
                     </div>
-                    <div class="out-container h-25  [&>input]:z-10 [&>label]:-z-10 [&>i]:z-10">
+                    <div class="out-container h-25   [&>input]:z-10 [&>label]:-z-10 [&>i]:z-10">
                         <input type="email" name="email" id="email"
                             class="  w-full text-[18px] text-heading bg-transparent border-0 border-b-2  border-b-blue-800 border-default-medium appearance-none focus:outline-none focus:ring-0 focus:border-brand peer"
                             placeholder=" " required />
@@ -99,100 +101,97 @@
                             class="absolute text-[20px] text-body duration-300 transform -translate-y-6 scale-75 top-8 origin-left peer-focus:s-0 peer-focus:text-fg-brand peer-placeholder-shown:scale-100 peer-focus:text-blue-950 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Password</label>
                         <i class="fa-solid fa-lock absolute top-10 text-xl left-[90%] text-gray-500"></i>
                     </div>
-                    <!-- section-forgotpassword -->
-                    <div class=" forget-password w-full flex gap-19 ">
-                        <div class=" check ">
-                            <input type="checkbox">
-                            <span>Remember</span>
-                        </div>
-                        <div class="title hover:underline cursor-pointer hover:text-blue-600 capitalize">
-                            <span>forgot password</span>
-                        </div>
-                    </div>
-                    <div class="btn-submit block text-center py-10">
-                        <button
+                    <div class="block text-center py-5 ">
+                        <button type="submit"
                             class=" border w-full px-2.5 py-2.5  cursor-pointer rounded-2xl font-bold hover:bg-blue-950 hover:text-gray-300  uppercase">sing
-                            in</button>
+                            in
+                        </button>
+                        <span id="show-result"></span>
                     </div>
-                    <p class="capitalize cursor-alias font-bold  flex px-5 ">
-                        Don't have an account ?
-                        <button class="singup font-medium cursor-pointer border-none capitalize hover:underline">
+                    <div class=" text-center py-5 bg-mist-100 rounded-xl">
+                        <p class="capitalize cursor-alias inline">
+                            Don't have account /
+                        </p>
+                        <button class=" singup font-bold cursor-pointer border-none capitalize hover:underline inline">
                             sing up
                         </button>
-                    </p>
-                </div>
+                    </div>
+                </form>
             </div>
             <!-- end-section-log-in-form -->
             <!--------------------------------------->
+
             <!-- The part of register form  -->
             <div class="form-singup" id="form-singup">
-                <div
-                    class=" w-100 h-[60vh]
+                <form id="Register"
+                    class=" w-100 h-[60vh] 
                     px-10 py-5  border border-gray-400 rounded-[5px]
                     [&>div>label]:font-medium [&>div>label]:text-[18px] [&>div>label]:text-gray-300 [&>div>input]:outline-none
                     [&>.outer-container]:absolute [&>.out-container]:w-full  [&>.out-container]:flex [&>.out-container]:relative">
-                    <div class=" text-2xl text-center py-2 font-bold capitalize" id="login-title">
+                    <div class=" text-2xl text-center py-5 font-bold capitalize" id="login-title">
                         <span>Register form</span>
                     </div>
-                    <!-- email-input -->
+                    <!-- email-register -->
                     <div class="out-container h-25 [&>input]:z-10 [&>label]:-z-10 [&>i]:z-10 ">
-                        <input type="email" name="email" id="email"
+                        <input type="email" name="regis-email" id="regis-email"
                             class="  w-full text-[18px] text-heading bg-transparent border-0 border-b-2  border-b-blue-800 border-default-medium appearance-none focus:outline-none focus:ring-0 focus:border-brand peer"
-                            placeholder=" " required />
+                            placeholder=" " />
                         <label for="email"
                             class=" absolute text-sm text-left text-body duration-300 transform -translate-y-6  top-8 scale-75 origin-left peer-focus:s-0 peer-focus:text-fg-brand peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:text-blue-950 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Email</label>
                         <i class="fa-solid fa-at absolute top-10 left-[90%] text-xl text-gray-500 "></i>
-                        <span id="show"></span>
+                        <span id="show" class="capitalize"></span>
                     </div>
                     <!-- password-input -->
                     <div class="out-container h-25 [&>input]:z-10 [&>label]:-z-10 [&>i]:z-10 ">
-                        <input type="password" name="password" id="password"
+                        <input type="password" name="regis-pw" id="regis-pw"
                             class=" w-full text-[18px] text-heading bg-transparent border-0 border-b-2 border-b-blue-800 border-default-medium appearance-none focus:outline-none focus:ring-0 focus:border-brand peer"
                             placeholder=" " required />
                         <label for="password"
                             class="absolute text-[20px] text-body duration-300 transform -translate-y-6 scale-75 top-8 origin-left peer-focus:s-0 peer-focus:text-fg-brand peer-placeholder-shown:scale-100 peer-focus:text-blue-950 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Password</label>
                         <i class="fa-solid fa-lock absolute top-10 left-[90%] text-xl text-gray-500 "></i>
-                        <span id="show"></span>
+                        <span id="show" class="capitalize"></span>
                     </div>
                     <!-- re-password -->
                     <div class="out-container h-25 [&>input]:z-10 [&>label]:-z-10 [&>i]:z-10">
-                        <input type="password" name="password" id="password"
+                        <input type="password" name="re-pw" id="re-pw"
                             class=" w-full text-[18px] text-heading bg-transparent border-0 border-b-2 border-b-blue-800 border-default-medium appearance-none focus:outline-none focus:ring-0 focus:border-brand peer"
                             placeholder=" " required />
-                        <span id="show"></span>
+                        <span id="show" class="capitalize"></span>
                         <label for="password"
                             class="absolute text-[20px] text-body duration-300 transform -translate-y-6 scale-75 top-8 origin-left peer-focus:s-0 peer-focus:text-fg-brand peer-placeholder-shown:scale-100 peer-focus:text-blue-950 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Re-Password</label>
                         <i class="fa-solid fa-lock absolute top-10 left-[90%] text-xl text-gray-500 "></i>
                     </div>
+
                     <!-- ------------------------------- -->
-                    <div class="btn-submit block text-center py-10">
-                        <button
+                    <div class="btn-submit block text-center py-5">
+                        <button type="submit"
                             class=" border-2 w-full px-2.5 py-2.5  cursor-pointer rounded-2xl font-bold hover:bg-blue-950 hover:text-gray-300  uppercase">
                             sing up
                         </button>
+                        <span></span>
                     </div>
                     <!-- ----------------------------- -->
-                    <div class="create-account font-bold  flex px-3 ">
-                        <p class="capitalize">Already have an Account ?</p>
+                    <div class=" bg-mist-50 text-center rounded-xl py-5">
+                        <p class="capitalize inline ">Already have Account /</p>
                         <button
-                            class=" sing-in font-medium cursor-pointer hover:text-blue-600 hover:underline capitalize"
+                            class="sing-in font-bold cursor-pointer hover:text-blue-600 hover:underline capitalize inline"
                             id="sing-in">
                             Sing in
                         </button>
                     </div>
-                </div>
+
+                </form>
             </div>
             <!-- --------------------------------------- -->
         </div>
-        <div class="img-lefthand  w-1/2 h-[70vh] bg-[url(../iMG/img1.jpg)] bg-center bg-cover bg-no-repeat 
+        <div class="img-lefthand py-10 relative top-10  w-1/2  h-150    bg-[url(../iMG/img1.jpg)] bg-center bg-cover bg-no-repeat 
             rounded-tl-4xl  rounded-bl-4xl ">
             <!-- image on right part  -->
         </div>
-
-
     </div>
 
 </body>
 <script src="../JS/login.js"></script>
+<script src="../JS/validation.js"></script>
 
 </html>

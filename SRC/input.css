@@ -43,6 +43,7 @@
   opacity: 1;
 }
 
+/* show/hide form */
 .form-login {
   display: block;
 }
@@ -52,7 +53,14 @@
 }
 
 /* back to login btn */
-
 .backlogin {
   visibility: hidden;
+}
+
+.closeform {
+  visibility: visible;
+}
+.closeform:hover {
+  transform: rotate(90deg);
+  transition: 0.2s all ease;
 }

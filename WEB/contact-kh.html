@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ទំនាក់ទំនង</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dangrek&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+        body {
+            font-family: "Dangrek", sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <!--Top Bar-->
+    <div class="top-bar py-2 border-bottom">
+        <div class="container d-flex justify-content-between align-items-center small">
+            <div>
+                <a href="#">អំពីយើង</a>
+                <span class="mx-2">|</span>
+                <a href="contact.html">ទំនាក់ទំនង</a>
+                <span class="mx-2">|</span>
+                <a href="#">តាមដានពួកយើង</a>
+                <span class="mx-2">|</span>
+                <a href=""></a>
+                <span><i class="fa-brands fa-facebook"></i></span>
+                <span><i class="fa-brands fa-twitter"></i></span>
+                <span><i class="fa-brands fa-instagram"></i></span>
+            </div>
+
+            <!-- Language Toggle -->
+            <div class="lang-toggle">
+                <label class="switch">
+                    <input type="checkbox" id="langSwitch">
+                    <span class="slider"></span>
+                </label>
+                <span id="langText">EN</span>
+            </div>
+        </div>
+    </div>
+    <!-- bottom-bar -->
+    <header class="container py-4 d-flex justify-content-between align-items-center">
+        <img src="/image/logo-menubar/logo.png" alt="logo" style="width: 150px; height: auto;">
+        <div>
+            <i class="bi bi-heart mx-2"></i>
+            <i class="bi bi-cart mx-2"></i>
+            <span>Sign in | Join</span>
+        </div>
+    </header>
+
+    <!-- brand choice -->
+    <nav class="navbar navbar-expand-lg ">
+        <div class="container">
+            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav list-style  w-100 d-flex justify-content-center py-4">
+                    <li class="nav-item ">
+                        <div class="cat-item active">
+                            <img src="image/logo-menubar/latop.png" alt="" width="26" height="26">
+                            <a class="nav-link " href="laptop.html">កុំព្យូទ័រយួរដៃ</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="">
+                            <div class="cat-item active">
+                                <img src="image/logo-menubar/periphls.png" alt="" width="26" height="26">
+                                <a class="nav-link " href="Peripharals.html">ឧបករណ៍បន្ថែម</a>
+                            </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="cat-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 23.832 27.034">
+                                <path id="Path_52" data-name="Path 52"
+                                    d="M86.179,14.4a.261.261,0,0,0-.251.284v2.852a.27.27,0,0,0,.243.3.289.289,0,0,0,.246-.287V14.687A.249.249,0,0,0,86.179,14.4Zm1.062,0a.247.247,0,0,0-.237.279v2.861a.273.273,0,0,0,.254.3.266.266,0,0,0,.24-.3V14.679A.261.261,0,0,0,87.241,14.4Zm4.5,4.839a.741.741,0,0,0-.817-.819h-.3v-3.23c0-1.948-.477-2.45-2.546-2.45H86.518a2.794,2.794,0,0,0-2.041.488l-.011.011a2.637,2.637,0,0,0-.593,1.95v3.233h-.392a.767.767,0,0,0-.786.786l.011,5.313a3.28,3.28,0,0,0,.977,2.3,3.01,3.01,0,0,0,2.132.908h.6v9.3h1.666v-9.3h.461a3.335,3.335,0,0,0,2.265-.949,3.156,3.156,0,0,0,1.021-2.248Zm-6.7-4.055a2.478,2.478,0,0,1,.21-1.175l0,0a2.656,2.656,0,0,1,1.258-.19h1.567c.248,0,1.092.006,1.283.2.138.138.088.811.088,1.222v3.183H85.048Zm5.388,9.666a1.325,1.325,0,0,1-.455,1,1.722,1.722,0,0,1-1.139.5H85.525a1.4,1.4,0,0,1-.977-.433,1.666,1.666,0,0,1-.48-1.167V19.7h6.367v5.156Zm-2.1-10.45a.253.253,0,0,0-.248.276V17.55a.245.245,0,1,0,.483-.006V14.681C88.568,14.527,88.485,14.4,88.334,14.4ZM78.19,16.367h-.2V10.883c0-.541-.276-.883-.783-.883H69.768a.767.767,0,0,0-.786.786l.008,5.581h-.2a.767.767,0,0,0-.786.786l.011,7.371a3.28,3.28,0,0,0,.977,2.3,3.01,3.01,0,0,0,2.132.908H72.7v9.3h1.669v-9.3h1.44a3.335,3.335,0,0,0,2.265-.949,2.887,2.887,0,0,0,.9-2.185V17.25C78.976,16.706,78.7,16.367,78.19,16.367Zm-7.542-4.8h5.779v4.8H70.648ZM77.407,24.56a1.325,1.325,0,0,1-.455,1,1.722,1.722,0,0,1-1.139.5H71.125a1.4,1.4,0,0,1-.977-.433,1.666,1.666,0,0,1-.48-1.167V17.934h7.738V24.56Z"
+                                    transform="translate(-68 -10)" fill="#555" />
+                            </svg>
+                            <a class="nav-link" href="#">គ្រឿងបន្ថែម</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="cat-item active">
+                            <img src="image/logo-menubar/pc.png" alt="" width="26" height="26">
+                            <a class="nav-link" href="pcset.html">ឈុតកុំព្យូទ័រ</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- coNtact -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-header">
+                <h1>ទំនាក់ទំនងមកយើង</h1>
+                <p>សូមទាក់ទងមកយើង ប្រសិនបើអ្នកមានសំណួរណាមួយ។</p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Contact Form -->
+                <div class="col-lg-7">
+                    <div class="contact-form-container">
+                        <form id="contactForm">
+                            <div class="mb-4">
+                                <label for="name" class="form-label">ឈ្មោះ <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="name" placeholder="បញ្ចូលឈ្មោះរបស់អ្នក"
+                                    required>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="email" class="form-label">អ៊ីមែល <span class="text-danger">*</span></label>
+                                <input type="email" class="form-control" id="email" placeholder="បញ្ចូលអ៊ីមែលរបស់អ្នក"
+                                    required>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="message" class="form-label">សារ</label>
+                                <textarea class="form-control" id="message" rows="5"
+                                    placeholder="សរសេរសាររបស់អ្នកនៅទីនេះ..."></textarea>
+                            </div>
+
+                            <button type="submit" class="btn-send">
+                                <span class="btn-text">Send Message</span>
+                            </button>
+
+                            <div id="successMessage" class="success-message">
+                                ✅ អរគុណ! សាររបស់អ្នកត្រូវបានផ្ញើដោយជោគជ័យ។
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="col-lg-5">
+                    <div class="contact-info-container">
+                        <div class="info-item">
+                            <div class="info-title">
+                                <i class="fas fa-map-marker-alt info-icon"></i>អាសយដ្ឋាន
+                            </div>
+                            <div class="info-content">
+                                No. 123, St. 456, Phnom Penh, Cambodia
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-title">
+                                <i class="far fa-clock info-icon"></i>ម៉ោងធ្វើការ
+                            </div>
+                            <div class="info-content">
+                                <strong>ថ្ងៃចន្ទ - ថ្ងៃអាទិត្យ</strong><br>
+                                09:00 ព្រឹក - 06:00 ល្ងាច
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-title">
+                                <i class="fas fa-phone info-icon"></i>
+                            </div>
+                            <div class="info-content">ទូរស័ព្ទ
+                                📞 0145789075<br>
+                                📞 0234609654<br>
+                                📞 0235678965
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-title">
+                                <i class="far fa-envelope info-icon"></i>អ៊ីមែល
+                            </div>
+                            <div class="info-content">
+                                ✉️ stev.dev@gmail.com
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Map Section -->
+            <div class="map-section">
+                <h2>📍 ស្វែងរកយើងតាមផែនទី</h2>
+                <div class="map-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3908.7471826949574!2d104.91494931533562!3d11.5788888!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTHCsDM0JzQzLjkiTiAxMDTCsDU1JzAwLjYiRQ!5e0!3m2!1sen!2skh!4v1234567890"
+                        allowfullscreen="" loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <button id="backToTop">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+        <span>ឡើង<br>ខាងលើ</span>
+    </button>
+
+    <!-- Footer -->
+    <div class="container footer border-top">
+        <div class="row  gap-5 p-4  d-flex justify-content-center ">
+            <div class="col-sm-6 col-md-4 col-lg-2   bg-white">
+                <img src="/image/logo-menubar/logo.png" alt="logo" style="width: 150px; height: auto;">
+                <p>មានសំណួរ? សូមទូរស័ព្ទមកយើង</p>
+                <ul class="list-unstyled  fix-list">
+                    <li>01234678</li>
+                    <li>01234678</li>
+                    <li>01234678</li>
+                </ul>
+            </div>
+            <div class="col-sm col-md-4 col-lg-2 fix-list bg-white ">
+                <h5>តំណភ្ជាប់រហ័ស</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#">កុំព្យូទ័រយួរដៃ</a></li>
+                    <li><a href="#">ឧបករណ៍</a></li>
+                    <li><a href="#">គ្រឿងបន្ថែម</a></li>
+                    <li><a href="#">ឈុតកុំព្យូទ័រ</a></li>
+                </ul>
+            </div>
+            <div class="col-sm col-md-4 col-lg-2 fix-list ">
+                <h5>ព័ត៌មានបន្ថែម</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#">អំពីយើង</a></li>
+                    <li><a href="#">ទំនាក់ទំនង</a></li>
+                    <li><a href="#">FQS</a></li>
+                    <li><a href="#">គោលការណ៍ឯកជនភាព</a></li>
+                    <li><a href="#"></a></li>
+                </ul>
+            </div>
+            <div class="col-sm col-md-4 col-lg-2 fix-list">
+                <h5>អាសយដ្ឋាន</h5>
+                <p> No. 123, St. 456, Phnom Penh, Cambodia </p>
+                <h6>Email:stev.dev@dev.com</h6>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const switcher = document.getElementById("langSwitch");
+        const text = document.getElementById("langText");
+
+        switcher.addEventListener("change", () => {
+            if (switcher.checked) {
+                text.textContent = "EN";
+                window.location.href = "contact.html";
+            } else {
+                text.textContent = "KH";
+                window.location.href = "contact-kh.html";
+            }
+        });
+
+        const backToTopBtn = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.style.display = 'flex';
+            } else {
+                backToTopBtn.style.display = 'none';
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+    </script>
+</body>
+
+</html>

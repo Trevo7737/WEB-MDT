@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pripharals</title>
+  <link rel="icon" href="image/favicon.png" type="image/png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+  <!--Top Bar-->
+  <div class="top-bar py-2 border-bottom ">
+    <div class="container d-flex justify-content-between align-items-center small">
+      <div>
+        <a href="#">About</a>
+        <span class="mx-2">|</span>
+        <a href="contact.html">Contact US</a>
+        <span class="mx-2">|</span>
+        <a href="#">Follow Us</a>
+        <span class="mx-2">|</span>
+        <a href=""></a>
+        <span><i class="fa-brands fa-facebook"></i></span>
+        <span><i class="fa-brands fa-twitter"></i></span>
+        <span><i class="fa-brands fa-instagram"></i></span>
+      </div>
+
+      <!-- Language Toggle -->
+      <div class="lang-toggle">
+        <label class="switch">
+          <input type="checkbox" id="langSwitch">
+          <span class="slider"></span>
+        </label>
+        <span id="langText">EN</span>
+      </div>
+    </div>
+  </div>
+  <!-- bottom-bar -->
+  <header class="container py-4 d-flex justify-content-between align-items-center">
+    <img src="/image/logo-menubar/logo.png" alt="logo" style="width: 150px; height: auto;">
+    <div>
+      <i class="bi bi-heart mx-2"></i>
+      <i class="bi bi-cart mx-2"></i>
+      <span>Sign in | Join</span>
+    </div>
+  </header>
+
+  <!-- brand choice -->
+  <nav class="navbar navbar-expand-lg ">
+    <div class="container">
+      <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav list-style  w-100 d-flex justify-content-center py-4">
+
+          <li class="nav-item ">
+            <div class="cat-item active">
+              <img src="image/logo-menubar/latop.png" alt="" width="26" height="26">
+              <a class="nav-link " href="laptop.html">Laptop</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <div class="">
+              <div class="cat-item active">
+                <img src="image/logo-menubar/periphls.png" alt="" width="26" height="26">
+                <a class="nav-link " href="#">Peripherals</a>
+              </div>
+          </li>
+          <li class="nav-item">
+            <div class="cat-item acitve">
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 23.832 27.034">
+                <path id="Path_52" data-name="Path 52"
+                  d="M86.179,14.4a.261.261,0,0,0-.251.284v2.852a.27.27,0,0,0,.243.3.289.289,0,0,0,.246-.287V14.687A.249.249,0,0,0,86.179,14.4Zm1.062,0a.247.247,0,0,0-.237.279v2.861a.273.273,0,0,0,.254.3.266.266,0,0,0,.24-.3V14.679A.261.261,0,0,0,87.241,14.4Zm4.5,4.839a.741.741,0,0,0-.817-.819h-.3v-3.23c0-1.948-.477-2.45-2.546-2.45H86.518a2.794,2.794,0,0,0-2.041.488l-.011.011a2.637,2.637,0,0,0-.593,1.95v3.233h-.392a.767.767,0,0,0-.786.786l.011,5.313a3.28,3.28,0,0,0,.977,2.3,3.01,3.01,0,0,0,2.132.908h.6v9.3h1.666v-9.3h.461a3.335,3.335,0,0,0,2.265-.949,3.156,3.156,0,0,0,1.021-2.248Zm-6.7-4.055a2.478,2.478,0,0,1,.21-1.175l0,0a2.656,2.656,0,0,1,1.258-.19h1.567c.248,0,1.092.006,1.283.2.138.138.088.811.088,1.222v3.183H85.048Zm5.388,9.666a1.325,1.325,0,0,1-.455,1,1.722,1.722,0,0,1-1.139.5H85.525a1.4,1.4,0,0,1-.977-.433,1.666,1.666,0,0,1-.48-1.167V19.7h6.367v5.156Zm-2.1-10.45a.253.253,0,0,0-.248.276V17.55a.245.245,0,1,0,.483-.006V14.681C88.568,14.527,88.485,14.4,88.334,14.4ZM78.19,16.367h-.2V10.883c0-.541-.276-.883-.783-.883H69.768a.767.767,0,0,0-.786.786l.008,5.581h-.2a.767.767,0,0,0-.786.786l.011,7.371a3.28,3.28,0,0,0,.977,2.3,3.01,3.01,0,0,0,2.132.908H72.7v9.3h1.669v-9.3h1.44a3.335,3.335,0,0,0,2.265-.949,2.887,2.887,0,0,0,.9-2.185V17.25C78.976,16.706,78.7,16.367,78.19,16.367Zm-7.542-4.8h5.779v4.8H70.648ZM77.407,24.56a1.325,1.325,0,0,1-.455,1,1.722,1.722,0,0,1-1.139.5H71.125a1.4,1.4,0,0,1-.977-.433,1.666,1.666,0,0,1-.48-1.167V17.934h7.738V24.56Z"
+                  transform="translate(-68 -10)" fill="#555" />
+              </svg>
+              <a class="nav-link" href="accessories.html">Accessories</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <div class="cat-item">
+              <img src="image/logo-menubar/pc.png" alt="" width="26" height="26">
+              <a class="nav-link" href="pcset.html">PC Sets</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- main -->
+  <div class="container">
+    <div class="row ">
+      <!-- Sidebar -->
+      <aside class="  col-md-2 col-lg-2 mb-4 ">
+        <div class="outer-container">
+          <h6 class="fw-bold mb-3">Brand <span>:</span></h6>
+          <ul class="brand-list ">
+            <li>
+              <a href="#brand-1">
+                <img src="image/brand-mouse/razer.png" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#brand-2">
+                <img src="image/brand-mouse/corsair.png" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#brand-3">
+                <img src="image/brand-mouse/dxracer.png" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#brand-4">
+                <img src="image/brand-mouse/logitech.png" alt="">
+              </a>
+            </li>
+
+          </ul>
+        </div>
+      </aside>
+
+      <!-- Products -->
+      <main class=" col-md-10 col-lg">
+        <!-- Banner1 -->
+        <div id="brand-1" class="name-brand">
+          <img src="image/brand-mouse/razer.png" alt="">
+          <span style="font-weight: 500; color: dodgerblue;">RAZER</span>
+        </div>
+        <div class="banner mb-2">
+          <img src="image/razer/banner-razer.png" class="img-fluid" alt="vivobook">
+        </div>
+        <!-- Razer-product -->
+        <div class="row">
+          <!-- product 1 -->
+          <div class="col-sm-6 col-md-6 col-lg-4">
+            <div class="product-card ">
+              <img src="image/razer/r1.jpg" alt="razer1">
+              <div class="details">
+                <p style="padding-top: 20px;">Razer Death Adder Essential White </p>
+                <h4 class="price">$19.00</h4>
+              </div>
+            </div>
+          </div>
+          <!-- product 2 -->
+          <div class="col-sm-6 col-md-6 col-lg-4">
+            <div class="product-card ">
+              <img src="image/razer/r2.jpg.png" alt="razer1">
+              <div class="details">
+                <p style="padding-top: 20px;">Razer Death Adder Essential Black</p>
+                <h4 class="price">$19.00</h4>
+              </div>
+            </div>
+          </div>
+          <!-- product 3 -->
+          <div class="col-sm-6 col-md-6 col-lg-4">
+            <div class="product-card ">
+              <img src="image/razer/r3.png" alt="razer1">
+              <div class="details">
+                <p style="padding-top: 20px;">Razer DeathAdder V2 X HyperSpeed - Ultra-Fast Wireless</p>
+                <h4 class="price">$49.00</h4>
+              </div>
+            </div>
+          </div>
+          <!-- product 4 -->
+          <div class="col-sm-6 col-md-6 col-lg-4">
+            <div class="product-card ">
+              <img src="image/razer/r4.png" alt="razer1">
+              <div class="details">
+                <p style="padding-top: 20px;">Razer Cobra : 58g, Gen-3 Optical Switches, Chroma RGB Lighting</p>
+                <h4 class="price">$49.00</h4>
+              </div>
+            </div>
+          </div>
+          <!-- product 5 -->
+          <div class="col-sm-6 col-md-6 col-lg-4">
+            <div class="product-card ">
+              <img src="image/razer/r5.png" alt="razer1">
+              <div class="details">
+                <p style="padding-top: 20px;">Razer Ornata V3 X Low Profile Keys - Silent Membrane Switches
+                </p>
+                <h4 class="price">$69.00</h4>
+              </div>
+            </div>
+          </div>
+          <!-- product 6 -->
+          <div class="col-sm-6 col-md-6 col-lg-4">
+            <div class="product-card ">
+              <img src="image/razer/r6.png" alt="razer1">
+              <div class="details">
+                <p style="padding-top: 20px;">
+                  Razer Gigantus v2 Cloth Gaming Mouse Pad ( 3XL )
+                </p>
+                <h4 class="price">$55.00</h4>
+              </div>
+            </div>
+          </div>
+          <!-- product 7 -->
+          <div class="col-sm-6 col-md-6 col-lg-4">
+            <div class="product-card ">
+              <img src="image/razer/r7.png" alt="razer1">
+              <div class="details">
+                <p style="padding-top: 20px;">
+                  Razer Kiyo X Full HD Streaming Webcam: 1080p 30FPS or 720p 60FPS -
+                  Equipped with Auto Focus.
+                </p>
+                <h4 class="price">$99.00</h4>
+              </div>
+            </div>
+          </div>
+          <!-- product 8 -->
+          <div class="col-sm-6 col-md-6 col-lg-4">
+            <div class="product-card ">
+              <img src="image/razer/r8.png" alt="razer1">
+              <div class="details">
+                <p style="padding-top: 20px;">Razer BlackShark V2 X Gaming Headset: 7.1 Surround Sound - 50mm Drivers
+                </p>
+                <h4 class="price">$49.00</h4>
+              </div>
+            </div>
+          </div>
+          <!-- product 9 -->
+          <div class="col-sm-6 col-md-6 col-lg-4">
+            <div class="product-card ">
+              <img src="image/razer/r9.jpg.png" alt="razer1">
+              <div class="details">
+                <p style="padding-top: 20px;">Razer Seiren V3 Chroma RGB USB Microphone: Stream & Game Reactive Lighting
+                </p>
+                <h4 class="price">$129.00</h4>
+              </div>
+            </div>
+          </div>
+          <!-- product 10 -->
+          <div class="col-sm-6 col-md-6 col-lg-4">
+            <div class="product-card ">
+              <img src="image/razer/r10.png" alt="razer1">
+              <div class="details">
+                <p style="padding-top: 20px;">Razer BlackShark V2 X White Gaming Headset: 7.1 Surround Sound - 50mm
+                  Drivers</p>
+                <h4 class="price">$49.00</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Banner2 -->
+        <div id="brand-2" class="name-brand">
+          <img src="image/brand-mouse/corsair.png" alt="">
+          <span style="font-weight: 500; color: dodgerblue;">Corsair ACC</span>
+        </div>
+        <div class="banner mb-2">
+          <img src="image/corsair/banner-corsair.jpg" class="img-fluid" alt="vivobook">
+        </div>
+        <!--corsair-Product -->
+        <div class="row">
+          <!-- product 1 -->
+          <div class="col-sm-6 col-md-6 col-lg-4">
+            <div class="product-card ">
+              <img src="image/corsair/ca1.png" alt="razer1">
+              <div class="details">
+                <p style="padding-top: 20px;">Corsair HS55 Surround Gaming Headset (Leatherette Memory Foam Ear Pads)
+                </p>
+                <h4 class="price">$70.00</h4>
+              </div>
+            </div>
+          </div>
+          <!-- product 2 -->
+          <div class="col-sm-6 col-md-6 col-lg-4">
+            <div class="product-card ">
+              <img src="image/corsair/ca2.png" alt="razer1">
+              <div class="details">
+                <p style="padding-top: 20px;">Corsair HS55 Stereo Gaming Headset (Leatherette Memory Foam Ear Pads) -
+                  White</p>
+                <h4 class="price">$79.00</h4>
+              </div>
+            </div>
+          </div>
+          <!-- product 3 -->
+          <div class="col-sm-6 col-md-6 col-lg-4">
+            <div class="product-card ">
+              <img src="image/corsair/ca3.png" alt="razer1">
+              <div class="details">
+                <p style="padding-top: 20px;">Corsair K70 PRO MINI WIRELESS RGB 60% Mechanical (Fastest Sub-1ms
+                  Wireless)</p>
+                <h4 class="price">$179.00</h4>
+              </div>
+            </div>
+          </div>
+          <!-- product 4 -->
+          <div class="col-sm-6 col-md-6 col-lg-4">
+            <div class="product-card ">
+              <img src="image/corsair/ca4.png" alt="razer1">
+              <div class="details">
+                <p style="padding-top: 20px;">Corsair MM350 PRO Premium Spill-Proof Cloth Gaming Mouse Pad – Extended XL
+                  - Black</p>
+                <h4 class="price">$40.00</h4>
+              </div>
+            </div>
+          </div>
+          <!-- product 5 -->
+          <div class="col-sm-6 col-md-6 col-lg-4">
+            <div class="product-card ">
+              <img src="image/corsair/ca5.png" alt="razer1">
+              <div class="details">
+                <p style="padding-top: 20px;">
+                  Corsair MM700RGB Gaming Mousepad Extended XL
+                </p>
+                <h4 class="price">$69.00</h4>
+              </div>
+            </div>
+          </div>
+          <!-- product 6 -->
+          <div class="col-sm-6 col-md-6 col-lg-4">
+            <div class="product-card ">
+              <img src="image/corsair/ca5.png" alt="razer1">
+              <div class="details">
+                <p style="padding-top: 20px;">
+                  Corsair MM700RGB Gaming Mousepad Extended XL2
+                </p>
+                <h4 class="price">$69.00</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Banner3 -->
+        <div id="brand-3" class="name-brand">
+          <img src="image/brand-mouse/dxracer.png" alt="">
+          <span style="font-weight: 500; color: dodgerblue;">DX RACER</span>
+        </div>
+        <div class="banner mb-2">
+          <img src="image/dxracer/banner-dxracer.jpg" class="img-fluid" alt="vivobook">
+        </div>
+
+        <!--dxracer-Product -->
+        <div class="row">
+          <!-- product 1 -->
+          <div class="col-sm-6 col-md-6 col-lg-4">
+            <div class="product-card ">
+              <img src="image/dxracer/dxr1.png" alt="razer1">
+              <div class="details">
+                <p style="padding-top: 20px;">DXRacer Drifting Series Speed Black White Gaming Chair</p>
+                <h4 class="price">$249.00</h4>
+              </div>
+            </div>
+          </div>
+          <!-- product 2 -->
+          <div class="col-sm-6 col-md-6 col-lg-4">
+            <div class="product-card ">
+              <img src="image/dxracer/dxr2.png" alt="razer1">
+              <div class="details">
+                <p style="padding-top: 20px;">DXRacer Formular Series CAPYBARA Size L - GC/LFD23LTA/CAPYBARA</p>
+                <h4 class="price">$199.00</h4>
+              </div>
+            </div>
+          </div>
+          <!-- product 3 -->
+          <div class="col-sm-6 col-md-6 col-lg-4">
+            <div class="product-card ">
+              <img src="image/dxracer/dx3.jpg" alt="razer1">
+              <div class="details">
+                <p style="padding-top: 20px;">DXRacer Formular Series Grey White - Size L - GC/LFD23FBCFBB/GW</p>
+                <h4 class="price">$169.00</h4>
+              </div>
+            </div>
+          </div>
+          <!-- product 4 -->
+          <div class="col-sm-6 col-md-6 col-lg-4">
+            <div class="product-card ">
+              <img src="image/dxracer/dxr4.png" alt="razer1">
+              <div class="details">
+                <p style="padding-top: 20px;">DXRacer Drifting Series Black Size M - GC/LFD23LTC/PUPPY</p>
+                <h4 class="price">$239.00</h4>
+              </div>
+            </div>
+          </div>
+          <!-- product 5 -->
+          <div class="col-sm-6 col-md-6 col-lg-4">
+            <div class="product-card ">
+              <img src="image/dxracer/dxr5.jpg" alt="razer1">
+              <div class="details">
+                <p style="padding-top: 20px;">
+                  DXRacer Formular Series Puppy Edition Size L - GC/LFD23LTC/PUPPY
+                </p>
+                <h4 class="price">$169.00</h4>
+              </div>
+            </div>
+          </div>
+          <!-- product 6 -->
+          <div class="col-sm-6 col-md-6 col-lg-4">
+            <div class="product-card ">
+              <img src="image/dxracer/dxr6.png" alt="razer1">
+              <div class="details">
+                <p style="padding-top: 20px;">
+                  DXRacer Formular Series Black & Red - Size L - GC/LFD23LTC/NR
+                </p>
+                <h4 class="price">$69.00</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Banner4 -->
+        <div id="brand-4" class="name-brand">
+          <img src="image/brand-mouse/logitech.png" alt="">
+          <span style="font-weight: 500; color: dodgerblue;">LOGITECH</span>
+        </div>
+        <div class="banner mb-2">
+          <img src="image/logitech/banner-logitech.jpg" class="img-fluid" alt="vivobook">
+        </div>
+        <!--logitech-Product -->
+        <div class="row">
+          <!-- product 1 -->
+          <div class="col-sm-6 col-md-6 col-lg-4">
+            <div class="product-card ">
+              <img src="image/logitech/lgt1.png " alt="razer1">
+              <div class="details">
+                <p style="padding-top: 20px;">Logitech MK345 Wireless Combo Full-Sized Keyboard with Palm Rest and
+                  Comfortable Right-Handed Mouse, 2.4 GHz Wireless USB </p>
+                <h4 class="price">$29.00</h4>
+              </div>
+            </div>
+          </div>
+          <!-- product 2 -->
+          <div class="col-sm-6 col-md-6 col-lg-4">
+            <div class="product-card ">
+              <img src="image/logitech/lgt2.png" alt="razer1">
+              <div class="details">
+                <p style="padding-top: 20px;">Logitech G435 LIGHTSPEED and Bluetooth Wireless - Lightweight , built-in
+                  Comfortable Right-Handed Mouse, 2.4 GHz Wireless USB 
+                  </p>
+                <h4 class="price">$59.00</h4>
+              </div>
+            </div>
+          </div>
+          <!-- product 3 -->
+          <div class="col-sm-6 col-md-6 col-lg-4">
+            <div class="product-card ">
+              <img src="image/logitech/lgt3.png" alt="razer1">
+              <div class="details">
+                <p style="padding-top: 20px;">Logitech Brio 500 Full HD Webcam with Auto Light Correction,Show Mode,
+                  Dual Noise Reduction Mics, Webcam Privacy Cover</p>
+                <h4 class="price">$199.00</h4>
+              </div>
+            </div>
+          </div>
+          <!-- product 4 -->
+          <div class="col-sm-6 col-md-6 col-lg-4">
+            <div class="product-card ">
+              <img src="image/logitech/lgt4.png" alt="razer1">
+              <div class="details">
+                <p style="padding-top: 20px;">Logitech G PRO X Superlight 2 DEX Wireless, 60g pro-Grade , 5 programmable
+                  Buttons, USB-C Charging</p>
+                <h4 class="price">$139.00</h4>
+              </div>
+            </div>
+          </div>
+          <!-- product 5 -->
+          <div class="col-sm-6 col-md-6 col-lg-4">
+            <div class="product-card ">
+              <img src="image/logitech/lgt5.png" alt="razer1">
+              <div class="details">
+                <p style="padding-top: 20px;">
+                  Logitech G560 PC Gaming Speaker System with 7.1 DTS:X Ultra Surround Sound, Game based LIGHTSYNC RGB
+                </p>
+                <h4 class="price">$169.00</h4>
+              </div>
+            </div>
+          </div>
+          <!-- product 6 -->
+          <div class="col-sm-6 col-md-6 col-lg-4">
+            <div class="product-card ">
+              <img src="image/logitech/lgt6.png" alt="razer1">
+              <div class="details">
+                <p style="padding-top: 20px;">
+                  Logitech C922x Pro Stream Webcam – Full 1080p HD Camera The Webcam the best in one .
+                </p>
+                <h4 class="price">$119.00</h4>
+              </div>
+            </div>
+          </div>
+          <!-- product  -->
+          <div class="col-sm-6 col-md-6 col-lg-4">
+            <div class="product-card ">
+              <img src="image/logitech/lgt7.png" alt="razer1">
+              <div class="details">
+                <p style="padding-top: 20px;">
+                  Logitech G Gaming Driving Force Shifter – Compatible with G29 and G920 Driving Force Racing Wheels
+                </p>
+                <h4 class="price">$89.00</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+
+  <!-- footer-palce -->
+  <div class="container footer border-top">
+    <div class="row  gap-5 p-4  d-flex justify-content-center ">
+      <div class="col-sm-6 col-md-4 col-lg-2   bg-white">
+        <img src="/image/logo-menubar/logo.png" alt="logo" style="width: 150px; height: auto;">
+        <p>Have Question? call us </p>
+        <ul class="list-unstyled  fix-list">
+          <li>01234678</li>
+          <li>01234678</li>
+          <li>01234678</li>
+        </ul>
+      </div>
+      <div class="col-sm col-md-4 col-lg-2 fix-list bg-white ">
+        <h5>QUICK Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="#">Laptop</a></li>
+          <li><a href="#">HARDWARE</a></li>
+          <li><a href="#">Peripherals</a></li>
+          <li><a href="#">Accessories</a></li>
+          <li><a href="#">PC Sets</a></li>
+        </ul>
+      </div>
+      <div class="col-sm col-md-4 col-lg-2 fix-list ">
+        <h5>MOR INFO</h5>
+        <ul class="list-unstyled">
+          <li><a href="#">ABOUT</a></li>
+          <li><a href="#">CONTACT</a></li>
+          <li><a href="#">FQS</a></li>
+          <li><a href="#">PRIVACY POLICY</a></li>
+          <li><a href="#">HELP</a></li>
+        </ul>
+      </div>
+      <div class="col-sm col-md-4 col-lg-2 fix-list">
+        <h5>Address:</h5>
+        <p> No. 123, St. 456, Phnom Penh, Cambodia </p>
+        <h6>Email:stev.dev@dev.com</h6>
+      </div>
+    </div>
+  </div>
+  <button id="backToTop">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+    <span>BACK<br>TOP</span>
+  </button>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    const switcher = document.getElementById("langSwitch");
+    const text = document.getElementById("langText");
+
+    switcher.addEventListener("change", () => {
+      if (switcher.checked) {
+        text.textContent = "KH";
+        window.location.href = "Peripharals-kh.html";
+      } else {
+        text.textContent = "EN";
+        window.location.href = 'Peripharals.html';
+      }
+    });
+
+    const backToTopBtn = document.getElementById('backToTop');
+
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTopBtn.style.display = 'flex';
+      } else {
+        backToTopBtn.style.display = 'none';
+      }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
+
+</body>
+
+</html>
