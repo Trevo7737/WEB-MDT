@@ -10,7 +10,7 @@
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- script of javascript -->
-    <script src="../JS/login.js" defer></script>
+    <script src="../JS/showhide.js" defer></script>
     <script src="../JS/validation.js" defer></script>
     <style>
         * {
@@ -26,24 +26,24 @@
 
         <!-- Orb 1 -->
         <div class="absolute w-100 h-100 bg-sky-400 rounded-full blur-[80px] opacity-60 -top-25 -left-25"
-            style="animation: float 10s ease-in-out infinite alternate;"></div>
+            style="animation: float 5s ease-in-out infinite alternate;"></div>
 
         <!-- Orb 2 -->
         <div class="absolute w-125 h-125 bg-indigo-400 rounded-full blur-[80px] opacity-60 -bottom-37.5 -right-25"
-            style="animation: float 10s ease-in-out infinite alternate; animation-delay:-2s;"></div>
+            style="animation: float 5s ease-in-out infinite alternate; animation-delay:-1s;"></div>
 
         <!-- Orb 3 -->
         <div class="absolute w-75 h-75 bg-fuchsia-400 rounded-full blur-[80px] opacity-60 top-[40%] left-[60%]"
-            style="animation: float 10s ease-in-out infinite alternate; animation-delay:-4s;"></div>
+            style="animation: float 5s ease-in-out infinite alternate; animation-delay:-1s;"></div>
 
     </div>
     <!------------------------------->
 
     <!-- header  part  of  webpage -->
-    <div class="container flex justify-between rounded-[20px]  bg-white/3 backdrop-blur-[50px]  border-white/10 border-t-white/20
+    <div class="container  flex justify-between rounded-[20px]  bg-white/3 backdrop-blur-[50px]  border-white/10 border-t-white/20
          border-l-white/20 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5),inset_0_0_0_1px_rgba(255,255,255,0.05)]  p-4">
-        <div class="icon uppercase   font-semibold">
-            <img src="../iMG/setec.png" alt="" class="w-50">
+        <div class="icon uppercase font-semibold">
+            <img src="../iMG/setec.png" alt="setec-logo" class="w-50">
         </div>
         <nav class="flex items-center justify-center  gap-2.5  font-poppins  text-[20px]  uppercase  w-1/2 h-auto">
             <a href="#">home</a>
@@ -55,8 +55,6 @@
             log in
         </button>
     </div>
-
-    <!-- --------------------------------------->
     <!-- the part of log in form  -->
     <div class="container-login max-w-1/2  relative  h-[80vh] rounded-[20px] top-10 
          bg-white/3 backdrop-blur-[20px] border border-white/10 border-t-white/20 border-l-white/20
@@ -68,17 +66,17 @@
                 <span>Enter your Credentials to access your account</span>
             </div>
             <button class="absolute flex top-5 left-[95%] cursor-pointer gap-1 text-[20px]  closeform" id="closeform">
-                <i class="fa-solid fa-x "></i>
+                <i class="fa-solid fa-x"></i>
             </button>
             <button class="absolute flex top-5 left-[87%] cursor-pointer gap-1 text-[20px]  backlogin" id="backlogin">
                 <i class="fa-solid fa-arrow-left"></i>
                 Back
             </button>
             <!-- login-part -->
-            <div class="form-login" id="form-login" class="form">
-                <form id="login"
-                    class=" w-100 h-[60vh]
-                px-10 py-10 border border-gray-400 rounded-[5px] 
+            <div class="login form py-4 " id="login">
+                <form id="singin"
+                    class=" w-100 h-[50vh]
+                px-10 border border-gray-400 rounded-[5px] 
                 [&>div>label]:font-medium [&>div>label]:text-[18px] [&>div>label]:text-gray-300 [&>div>input]:outline-none
                 [&>.outer-container]:absolute [&>.out-container]:w-full [&>.out-container]:text-center  [&>.out-container]:flex [&>.out-container]:relative">
                     <!-- email-login -->
@@ -86,106 +84,98 @@
                         <span>login form</span>
                     </div>
                     <div class="out-container h-25   [&>input]:z-10 [&>label]:-z-10 [&>i]:z-10">
-                        <input type="email" name="email" id="email"
+                        <input type="email" id="email-login"
                             class="  w-full text-[18px] text-heading bg-transparent border-0 border-b-2  border-b-blue-800 border-default-medium appearance-none focus:outline-none focus:ring-0 focus:border-brand peer"
                             placeholder=" " required />
-                        <span id="show"></span>
-                        <label for="email"
-                            class="  absolute text-sm text-left text-body duration-300 transform -translate-y-6  top-8 scale-75 origin-left peer-focus:s-0 peer-focus:text-fg-brand peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:text-blue-950 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Email</label>
+                        <label for="email-login"
+                            class="absolute text-sm text-left text-body duration-300 transform -translate-y-6  top-8 scale-75 origin-left peer-focus:s-0 peer-focus:text-fg-brand peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:text-blue-950 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Email</label>
                         <i class="fa-solid fa-at absolute top-10 left-[90%] text-xl text-gray-500 "></i>
+                        <small class="error  absolute  top-20 text-red-500 font-medium"></small>
                     </div>
                     <!-- password-input-section -->
                     <div class="out-container h-25 [&>input]:z-10 [&>label]:-z-10 [&>i]:z-10 ">
-                        <input type="password" name="password" id="password"
+                        <input type="password" id="password-login"
                             class=" w-full text-[18px] text-heading bg-transparent border-0 border-b-2 border-b-blue-800 border-default-medium appearance-none focus:outline-none focus:ring-0 focus:border-brand peer"
                             placeholder=" " required />
-                        <span id="show"></span>
                         <label for="password"
                             class="absolute text-[20px] text-body duration-300 transform -translate-y-6 scale-75 top-8 origin-left peer-focus:s-0 peer-focus:text-fg-brand peer-placeholder-shown:scale-100 peer-focus:text-blue-950 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Password</label>
                         <i class="fa-solid fa-lock absolute top-10 text-xl left-[90%] text-gray-500"></i>
+                        <small class="error  absolute  top-20 text-red-500 font-medium"></small>
                     </div>
                     <div class="block text-center py-5 ">
-                        <button type="submit"
-                            class=" border w-full px-2.5 py-2.5  cursor-pointer rounded-2xl font-bold hover:bg-blue-950 hover:text-gray-300  uppercase">sing
+                        <button type="button"
+                            class=" border w-full px-2.5 py-2.5  cursor-pointer rounded-2xl font-bold hover:bg-blue-950 hover:text-gray-300  uppercase">log
                             in
                         </button>
-                        <span id="show-result"></span>
-                    </div>
-                    <div class=" text-center py-5 bg-mist-100 rounded-xl">
-                        <p class="capitalize cursor-alias inline">
-                            Don't have account /
-                        </p>
-                        <button class=" singup font-bold cursor-pointer border-none capitalize hover:underline inline">
-                            sing up
-                        </button>
+
                     </div>
                 </form>
+                <div class=" text-center py-5">
+                    <p class="capitalize cursor-none inline">
+                        Don't have account /
+                    </p>
+                    <button
+                        class="btnsingup font-bold cursor-pointer border-none capitalize hover:underline hover:text-blue-600 inline ">
+                        sing up
+                    </button>
+                </div>
+
+
             </div>
-            <!-- end-section-log-in-form -->
             <!--------------------------------------->
-
-            <!-- The part of register form  -->
-            <div class="form-singup" id="form-singup">
-                <form id="Register"
-                    class=" w-100 h-[60vh] 
-                    px-10 py-5  border border-gray-400 rounded-[5px]
+            <form id="singup"
+                class=" w-100 h-[50vh] singup
+                    px-10   border border-gray-400 rounded-[5px]
                     [&>div>label]:font-medium [&>div>label]:text-[18px] [&>div>label]:text-gray-300 [&>div>input]:outline-none
-                    [&>.outer-container]:absolute [&>.out-container]:w-full  [&>.out-container]:flex [&>.out-container]:relative">
-                    <div class=" text-2xl text-center py-5 font-bold capitalize" id="login-title">
-                        <span>Register form</span>
-                    </div>
-                    <!-- email-register -->
-                    <div class="out-container h-25 [&>input]:z-10 [&>label]:-z-10 [&>i]:z-10 ">
-                        <input type="email" name="regis-email" id="regis-email"
-                            class="  w-full text-[18px] text-heading bg-transparent border-0 border-b-2  border-b-blue-800 border-default-medium appearance-none focus:outline-none focus:ring-0 focus:border-brand peer"
-                            placeholder=" " />
-                        <label for="email"
-                            class=" absolute text-sm text-left text-body duration-300 transform -translate-y-6  top-8 scale-75 origin-left peer-focus:s-0 peer-focus:text-fg-brand peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:text-blue-950 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Email</label>
-                        <i class="fa-solid fa-at absolute top-10 left-[90%] text-xl text-gray-500 "></i>
-                        <span id="show" class="capitalize"></span>
-                    </div>
-                    <!-- password-input -->
-                    <div class="out-container h-25 [&>input]:z-10 [&>label]:-z-10 [&>i]:z-10 ">
-                        <input type="password" name="regis-pw" id="regis-pw"
-                            class=" w-full text-[18px] text-heading bg-transparent border-0 border-b-2 border-b-blue-800 border-default-medium appearance-none focus:outline-none focus:ring-0 focus:border-brand peer"
-                            placeholder=" " required />
-                        <label for="password"
-                            class="absolute text-[20px] text-body duration-300 transform -translate-y-6 scale-75 top-8 origin-left peer-focus:s-0 peer-focus:text-fg-brand peer-placeholder-shown:scale-100 peer-focus:text-blue-950 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Password</label>
-                        <i class="fa-solid fa-lock absolute top-10 left-[90%] text-xl text-gray-500 "></i>
-                        <span id="show" class="capitalize"></span>
-                    </div>
-                    <!-- re-password -->
-                    <div class="out-container h-25 [&>input]:z-10 [&>label]:-z-10 [&>i]:z-10">
-                        <input type="password" name="re-pw" id="re-pw"
-                            class=" w-full text-[18px] text-heading bg-transparent border-0 border-b-2 border-b-blue-800 border-default-medium appearance-none focus:outline-none focus:ring-0 focus:border-brand peer"
-                            placeholder=" " required />
-                        <span id="show" class="capitalize"></span>
-                        <label for="password"
-                            class="absolute text-[20px] text-body duration-300 transform -translate-y-6 scale-75 top-8 origin-left peer-focus:s-0 peer-focus:text-fg-brand peer-placeholder-shown:scale-100 peer-focus:text-blue-950 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Re-Password</label>
-                        <i class="fa-solid fa-lock absolute top-10 left-[90%] text-xl text-gray-500 "></i>
-                    </div>
+                    [&>.outer-container]:absolute [&>.out-container]:w-full  [&>.out-container]:flex [&>.out-container]:relative ">
+                <div class=" text-2xl text-center py-5 font-bold uppercase">
+                    <span>sing up</span>
+                </div>
+                <div class="out-container h-25 [&>input]:z-10 [&>label]:-z-10 [&>i]:z-10 ">
+                    <input type="email" id="email"
+                        class="w-full text-[18px] text-heading bg-transparent border-0 border-b-2  border-b-blue-800 border-default-medium appearance-none focus:outline-none focus:ring-0 focus:border-brand peer"
+                        placeholder=" " required />
+                    <label for="email"
+                        class=" absolute text-sm text-left text-body duration-300 transform -translate-y-6  top-8 scale-75 origin-left peer-focus:s-0 peer-focus:text-fg-brand peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:text-blue-950 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Email</label>
+                    <i class="fa-solid fa-at absolute top-10 left-[90%] text-xl text-gray-500 "></i>
+                    <small class="Error text-red-500 capitalize absolute top-20"></small>
+                </div>
+                <!-- password-input -->
+                <div class="out-container h-25 [&>input]:z-10 [&>label]:-z-10 [&>i]:z-10 ">
+                    <input type="password" id="password"
+                        class=" w-full text-[18px] text-heading bg-transparent border-0 border-b-2 border-b-blue-800 border-default-medium appearance-none focus:outline-none focus:ring-0 focus:border-brand peer"
+                        placeholder="" required />
+                    <label for="password"
+                        class="absolute text-[20px] text-body duration-300 transform -translate-y-6 scale-75 top-8 origin-left peer-focus:s-0 peer-focus:text-fg-brand peer-placeholder-shown:scale-100 peer-focus:text-blue-950 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Password</label>
+                    <i class="fa-solid fa-lock absolute top-10 left-[90%] text-xl text-gray-500 "></i>
+                    <small class="error  absolute  top-20 text-red-500 font-medium"></small>
+                </div>
+                <!-- re-password -->
+                <div class="out-container h-25 [&>input]:z-10 [&>label]:-z-10 [&>i]:z-10">
+                    <input type="password" id="confirmpw"
+                        class=" w-full text-[18px] text-heading bg-transparent border-0 border-b-2 border-b-blue-800 border-default-medium appearance-none focus:outline-none focus:ring-0 focus:border-brand peer"
+                        placeholder=" " required />
+                    <span id="confirmpwerror"></span>
+                    <label for=" password"
+                        class="absolute text-[20px] text-body duration-300 transform -translate-y-6 scale-75 top-8 origin-left peer-focus:s-0 peer-focus:text-fg-brand peer-placeholder-shown:scale-100 peer-focus:text-blue-950 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Re-Password</label>
+                    <i class="fa-solid fa-lock absolute top-10 left-[90%] text-xl text-gray-500 "></i>
+                    <small class="error  absolute  top-20 text-red-500 font-medium"></small>
+                </div>
 
-                    <!-- ------------------------------- -->
-                    <div class="btn-submit block text-center py-5">
-                        <button type="submit"
-                            class=" border-2 w-full px-2.5 py-2.5  cursor-pointer rounded-2xl font-bold hover:bg-blue-950 hover:text-gray-300  uppercase">
-                            sing up
-                        </button>
-                        <span></span>
-                    </div>
-                    <!-- ----------------------------- -->
-                    <div class=" bg-mist-50 text-center rounded-xl py-5">
-                        <p class="capitalize inline ">Already have Account /</p>
-                        <button
-                            class="sing-in font-bold cursor-pointer hover:text-blue-600 hover:underline capitalize inline"
-                            id="sing-in">
-                            Sing in
-                        </button>
-                    </div>
-
-                </form>
+                <button type="submit"
+                    class=" border-2 w-full px-2.5 py-2.5 btn-submit block text-center cursor-pointer rounded-2xl font-bold hover:bg-blue-950 hover:text-gray-300  uppercase">
+                    sing up
+                </button>
+            </form>
+            <div class=" text-center show py-2.5 hidden">
+                <p class="capitalize inline rounded-xl  text-center">Already have Account /</p>
+                <button
+                    class="sing-in font-bold text-center cursor-pointer hover:text-blue-600 hover:underline capitalize inline"
+                    id="sing-in">
+                    Sing in
+                </button>
             </div>
-            <!-- --------------------------------------- -->
+            <!----------------------------------------- -->
         </div>
         <div class="img-lefthand py-10 relative top-10  w-1/2  h-150    bg-[url(../iMG/img1.jpg)] bg-center bg-cover bg-no-repeat 
             rounded-tl-4xl  rounded-bl-4xl ">

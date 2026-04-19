@@ -44,11 +44,11 @@
 }
 
 /* show/hide form */
-.form-login {
+.login {
   display: block;
 }
 
-.form-singup {
+.singup {
   display: none;
 }
 
@@ -65,6 +65,6 @@
   transition: 0.2s all ease;
 }
 
-.error {
-  border-bottom: red;
+.show {
+  display: none;
 }
