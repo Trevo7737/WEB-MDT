@@ -1,37 +1,78 @@
-function showError(input, message) {
-  const inputid = input.parentElement;
-  const error = inputid.querySelector("");
-  error.textContent = message;
+// real-time valdiation-form
+document
+  .getElementById("email-singup")
+  .addEventListener("input", validationemail);
+document
+  .getElementById("password-singup")
+  .addEventListener("input", validationpassword);
+document
+  .getElementById("password-Re-singup")
+  .addEventListener("input", validationconfirm);
+
+// validation-singup-form
+function validationemail() {
+  let emailsingup = document.getElementById("email-singup").value.trim();
+  let error = document.getElementById("email-singup-error");
+
+  if (emailsingup === "") {
+    error.innerText = "email is required";
+  } else if (
+    !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(emailsingup)
+  ) {
+    error.innerText = "Please input (example@gmail.net)";
+  } else {
+    error.innerText = "";
+  }
 }
-const singup = document.getElementById("button");
 
-singup.addEventListener("button", (e) => {
+function validationpassword() {
+  let passwordsingup = document.getElementById("password-singup").value;
+  let error = document.getElementById("password-singup-error");
+
+  if (passwordsingup == "") {
+    error.innerText = "Password is required";
+  } else if (passwordsingup.length < 6) {
+    error.innerText = "Please input at less than 6 character ";
+  } else {
+    error.innerText = "";
+  }
+}
+
+function validationconfirm() {
+  let confirmsingup = document.getElementById("password-Re-singup").value;
+  let error = document.getElementById("password-Re-error");
+
+  if (confirmsingup === "") {
+    error.innerText = "confirm password is required";
+  } else if (passwordsingup !== confirmsingup) {
+    error.innerText = "Password is not match";
+  } else {
+    error.innerText = "";
+  }
+}
+
+// create form submission check
+document.getElementById("singup").addEventListener("submit", (e) => {
   e.preventDefault();
-  const email = document.getElementById("email").value.trim();
-  const password = document.getElementById("password").value;
-  const confirmpw = document.getElementById("confirmpw").value;
+  validationemail();
+  validationpassword();
+  validationconfirm();
 
-  const emailpattern = / ^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  let errors = document.querySelectorAll(".error");
+  let haserrors = false;
 
-  if (!emailpattern.test(email)) {
-    showError("email", "Please Input your like this :(example123@gmail.com)");
-    return;
-  }
+  errors.forEach((error) => {
+    if (error.innerText !== "") {
+      haserrors = true;
+    }
+  });
 
-  if (password == " ") {
-    alert("Please input password");
-  } else if (password.lenght < 6) {
-    showError(
-      "password",
-      "Please Input Your Password at less more than 6 characters.",
-    );
-    return;
-  }
+  if (!haserrors) {
+    document.getElementById("success").innerText = "Sing up successful.";
+    document.getElementById("success").style.display = "block";
 
-  if (confirmpw !== password) {
-    showError("confirmpw", "Password not the same of above password.");
-    return;
-  } else if (confirmpw === password) {
-    alert("Successfull Sing Up .");
+    setTimeout(() => {
+      document.getElementById("success").style.display = "none";
+    }, 2000);
   }
 });

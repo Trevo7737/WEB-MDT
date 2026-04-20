@@ -7,9 +7,8 @@ const displaylogin = document.getElementById("login");
 const backlogin = document.getElementById("backlogin");
 const btnsingin = document.getElementById("sing-in");
 const showsing = document.querySelector(".show");
-
+const showbtnsing = document.querySelector(".showbtnsingin");
 // open && close form
-
 openlogin.onclick = () => {
   containerlogin.classList.add("active");
 };
@@ -26,6 +25,7 @@ btnregister.addEventListener("click", function (e) {
   closeform.style.visibility = "hidden";
   displaylogin.style.display = "none";
   showsing.style.display = "block";
+  showbtnsing.style.display = "none";
 });
 
 // back to login form
@@ -47,6 +47,7 @@ btnsingin.onclick = (e) => {
   closeform.style.visibility = "visible";
   displaylogin.style.display = "block";
   showsing.style.display = "none";
+  showbtnsing.style.display = "block";
 };
 
 // end-section-of-interactive with login and register form
