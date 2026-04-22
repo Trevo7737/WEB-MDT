@@ -43,7 +43,7 @@
     <div class="container  flex justify-between rounded-[20px]  bg-white/3 backdrop-blur-[50px]  border-white/10 border-t-white/20
          border-l-white/20 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5),inset_0_0_0_1px_rgba(255,255,255,0.05)]  p-4">
         <div class="icon uppercase font-semibold">
-            <img src="../iMG/setec.png" alt="setec-logo" class="w-50">
+            <!-- <img src="../iMG/setec.png" alt="setec-logo" class="w-50"> -->
         </div>
         <nav class="flex items-center justify-center  gap-2.5  font-poppins  text-[20px]  uppercase  w-1/2 h-auto">
             <a href="#">home</a>
@@ -74,39 +74,39 @@
             </button>
             <!-- login-part -->
             <form id="login"
-                class=" w-100 h-[50vh]  login
+                class=" w-100 h-[50vh] login
                 px-10 border border-gray-400 rounded-[5px] 
                 [&>div>label]:font-medium [&>div>label]:text-[18px] [&>div>label]:text-gray-300 [&>div>input]:outline-none
                 [&>.outer-container]:absolute [&>.out-container]:w-full [&>.out-container]:text-center  [&>.out-container]:flex [&>.out-container]:relative">
                 <!-- email-login -->
                 <div class=" text-2xl text-center py-13 font-bold capitalize" id="login-title">
-                    <span>sing in </span>
+                    <span>sign in </span>
                 </div>
                 <!-- input-email-singin -->
                 <div class="out-container h-25   [&>input]:z-10 [&>label]:-z-10 [&>i]:z-10">
-                    <input type="email" id="email-singin"
+                    <input type="email" id="email-signin"
                         class="  w-full text-[18px] text-heading bg-transparent border-0 border-b-2  border-b-blue-800 border-default-medium appearance-none focus:outline-none focus:ring-0 focus:border-brand peer"
                         placeholder=" " />
                     <label for="email-login"
                         class="absolute text-sm text-left text-body duration-300 transform -translate-y-6  top-8 scale-75 origin-left peer-focus:s-0 peer-focus:text-fg-brand peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:text-blue-950 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Email</label>
                     <i class="fa-solid fa-at absolute top-10 left-[90%] text-xl text-gray-500 "></i>
-                    <small class="error  absolute  top-18 text-red-500 font-medium" id="email-singin-error"></small>
+                    <small class="error " id="email-signin-error"></small>
                 </div>
                 <!-- input-password-singin -->
                 <div class="out-container h-30 [&>input]:z-10 [&>label]:-z-10 [&>i]:z-10 ">
-                    <input type="password" id="password-singin" maxlength="20"
+                    <input type="password" id="password-signin" maxlength="20"
                         class=" w-full text-[18px] text-heading bg-transparent border-0 border-b-2 border-b-blue-800 border-default-medium appearance-none focus:outline-none focus:ring-0 focus:border-brand peer"
                         placeholder=" " />
                     <label for="password"
                         class="absolute text-[20px] text-body duration-300 transform -translate-y-6 scale-75 top-8 origin-left peer-focus:s-0 peer-focus:text-fg-brand peer-placeholder-shown:scale-100 peer-focus:text-blue-950 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Password</label>
                     <i class="fa-solid fa-lock absolute top-10 text-xl left-[90%] text-gray-500"></i>
-                    <small class="error" id="password-singin-error"></small>
+                    <small class="error" id="password-signin-error"></small>
                 </div>
                 <button type="submit"
-                    class=" border-2 w-full px-2.5 py-2.5  cursor-pointer rounded-2xl font-bold hover:bg-blue-950 hover:text-gray-300  uppercase">log
-                    in
+                    class=" border-2 w-full px-2.5 py-2.5  cursor-pointer rounded-2xl font-bold hover:bg-blue-950 hover:text-gray-300  uppercase">
+                    sign in
                 </button>
-                <span class="success hidden" id="success"></span>
+                <small id="success-signin"></small>
             </form>
             <div class=" text-center showbtnsingin  py-2.5 px-2.5 bg-mist-200  rounded-2xl">
                 <p class="capitalize cursor-none inline">
@@ -114,7 +114,7 @@
                 </p>
                 <button
                     class="btnsingup font-bold cursor-pointer border-none capitalize hover:underline hover:text-blue-600 inline ">
-                    sing up
+                    sign up
                 </button>
             </div>
 
@@ -126,7 +126,7 @@
                     [&>div>label]:font-medium [&>div>label]:text-[18px] [&>div>label]:text-gray-300 [&>div>input]:outline-none
                     [&>.outer-container]:absolute [&>.out-container]:w-full  [&>.out-container]:flex [&>.out-container]:relative ">
                 <div class=" text-2xl text-center py-5 font-bold uppercase">
-                    <span>sing up</span>
+                    <span>sign up</span>
                 </div>
                 <div class="out-container h-25 [&>input]:z-10 [&>label]:-z-10 [&>i]:z-10 ">
                     <input type="email" id="email-singup"
@@ -162,14 +162,14 @@
                     class=" border-2 w-full px-2.5 py-2.5 text-center cursor-pointer rounded-2xl font-bold hover:bg-blue-950 hover:text-gray-300  uppercase">
                     sing up
                 </button>
-                <small class="success" id="success"></small>
+                <small id="success-signup"></small>
             </form>
             <div class=" text-center show py-2.5 px-2.5 bg-mist-200  rounded-2xl">
                 <p class="capitalize inline rounded-xl  text-center">Already have Account /</p>
                 <button
                     class="sing-in font-bold text-center cursor-pointer hover:text-blue-600 hover:underline capitalize inline"
                     id="sing-in">
-                    Sing in
+                    Sign in
                 </button>
             </div>
             <!----------------------------------------- -->
@@ -179,8 +179,4 @@
             <!-- image on right part  -->
         </div>
     </div>
-
 </body>
-
-
-</html>

@@ -24,7 +24,6 @@
 /* -------------display-login--------------- */
 .container-login {
   visibility: hidden;
-  /* transform: scale(1, 0); */
   transform: translatey(-100%);
   transition: all 0.3s ease-in-out;
   opacity: 0;
@@ -78,12 +77,4 @@
   font-weight: 500;
   position: absolute;
   top: 80px;
-}
-
-.success {
-  width: 80%;
-  color: green;
-  font-weight: 500;
-  text-align: center;
-  margin-top: 20px;
 }
