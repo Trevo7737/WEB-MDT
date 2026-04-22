@@ -79,7 +79,7 @@ document.getElementById("singup").addEventListener("submit", (e) => {
     let emailInput = document.getElementById("email-singup").value.trim();
     let passwordInput = document.getElementById("password-singup").value;
 
-    // check email duplicate
+    // check email Registered  already
     let registeredUsers = loadRegisteredUsers();
 
     if (registeredUsers.some((u) => u.email === emailInput)) {
@@ -100,7 +100,7 @@ document.getElementById("singup").addEventListener("submit", (e) => {
       successEl.style.display = "none";
       successEl.innerText = "";
       document.getElementById("singup").reset();
-    }, 3000);
+    }, 2000);
   }
 });
 
@@ -149,4 +149,14 @@ document.getElementById("login").addEventListener("submit", (e) => {
   }
 
   window.location.href = "../WEB/laptop.html";
+
+  let successEl = document.getElementById("success-signin");
+  successEl.innerText = "Sing in successful!";
+  successEl.style.cssText =
+    "display:block; color:#4ade80; font-weight:700; font-size:14px; text-align:center; margin-top:8px";
+  setTimeout(() => {
+    successEl.style.display = "none";
+    successEl.innerText = "";
+    document.getElementById("login").reset();
+  }, 2000);
 });

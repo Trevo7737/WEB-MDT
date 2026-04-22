@@ -50,4 +50,18 @@ btnsingin.onclick = (e) => {
   showbtnsing.style.display = "block";
 };
 
+function sawpassword() {
+  let input = document.querySelector(".showpassword");
+  let toggle = document.getElementById("toggle");
+  if (input.type === "text") {
+    input.type = "password";
+    toggle.classList.remove("fa-unlock");
+    toggle.classList.add("fa-lock");
+  } else {
+    input.type = "text";
+    toggle.classList.remove("fa-lock");
+    toggle.classList.add("fa-unlock");
+  }
+}
+
 // end-section-of-interactive with login and register form
