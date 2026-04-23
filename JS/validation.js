@@ -2,6 +2,7 @@
 document
   .getElementById("email-singup")
   .addEventListener("input", validationemail);
+
 document
   .getElementById("password-singup")
   .addEventListener("input", validationpassword);
@@ -9,7 +10,7 @@ document
   .getElementById("password-Re-singup")
   .addEventListener("input", validationconfirm);
 
-// validation-singup-form c
+// validation-singup-form
 function validationemail() {
   let emailsingup = document.getElementById("email-singup").value.trim();
   let error = document.getElementById("email-singup-error");
@@ -21,7 +22,13 @@ function validationemail() {
   ) {
     error.innerText = "Please input (example@gmail.net)";
   } else {
-    error.innerText = "";
+    // Clear any lingering duplicate-email error when user edits the field
+    let registeredUsers = loadRegisteredUsers();
+    if (registeredUsers.some((u) => u.email === emailsingup)) {
+      error.innerText = "This email is already registered!";
+    } else {
+      error.innerText = "";
+    }
   }
 }
 
@@ -32,7 +39,7 @@ function validationpassword() {
   if (passwordsingup == "") {
     error.innerText = "Password is required";
   } else if (passwordsingup.length < 6) {
-    error.innerText = "Please input at less than 6 character ";
+    error.innerText = "Please input at less than 6 character";
   } else {
     error.innerText = "";
   }
@@ -56,6 +63,7 @@ function validationconfirm() {
 function loadRegisteredUsers() {
   return JSON.parse(localStorage.getItem("registeredUsers")) || [];
 }
+loadRegisteredUsers();
 
 // Sign-up form submission
 
@@ -66,6 +74,7 @@ document.getElementById("singup").addEventListener("submit", (e) => {
   validationpassword();
   validationconfirm();
 
+  // Only check errors inside the sign-up form to avoid false blocks from sign-in errors
   let errors = document.querySelectorAll(".error");
   let haserrors = false;
 
@@ -76,20 +85,20 @@ document.getElementById("singup").addEventListener("submit", (e) => {
     }
   }
   if (!haserrors) {
-    let emailInput = document.getElementById("email-singup").value.trim();
-    let passwordInput = document.getElementById("password-singup").value;
+    let emailset = document.getElementById("email-singup").value.trim();
+    let passwordset = document.getElementById("password-singup").value;
 
     // check email Registered  already
     let registeredUsers = loadRegisteredUsers();
 
-    if (registeredUsers.some((u) => u.email === emailInput)) {
+    if (registeredUsers.some((u) => u.email === emailset)) {
       document.getElementById("email-singup-error").innerText =
         "This email is already registered!";
       return;
     }
 
     // save new user to localStorage
-    registeredUsers.push({ email: emailInput, password: passwordInput });
+    registeredUsers.push({ email: emailset, password: passwordset });
     localStorage.setItem("registeredUsers", JSON.stringify(registeredUsers));
 
     let successEl = document.getElementById("success-signup");
@@ -100,63 +109,60 @@ document.getElementById("singup").addEventListener("submit", (e) => {
       successEl.style.display = "none";
       successEl.innerText = "";
       document.getElementById("singup").reset();
-    }, 2000);
+    }, 3000);
   }
 });
 
-// real-time validation-form  login
-document.getElementById("email-signin").addEventListener("input", checkemail);
-document.getElementById("password-signin").addEventListener("input", checkpass);
+function chekcinput() {
+  let emailinput = document.getElementById("email-signin").value.trim();
+  let passwordinput = document.getElementById("password-signin").value;
+  let emailError = document.getElementById("email-signin-error");
+  let passwordError = document.getElementById("password-signin-error");
 
-function checkemail() {
-  let email = document.getElementById("email-signin").value.trim();
-  let error = document.getElementById("email-signin-error");
-
-  if (email == "") {
-    error.innerText = "Plese Input  @Email";
+  let hasEmpty = false;
+  if (emailinput === "") {
+    emailError.innerText = "Email is required";
+    hasEmpty = true;
   } else {
-    error.innerText = "";
+    emailError.innerText = "";
   }
-}
-
-function checkpass() {
-  let password = document.getElementById("password-signin").value;
-  let error = document.getElementById("password-signin-error");
-
-  if (password == "") {
-    error.innerText = "Please Input Password";
+  if (passwordinput === "") {
+    passwordError.innerText = "Password is required";
+    hasEmpty = true;
   } else {
-    error.innerText = "";
+    passwordError.innerText = "";
   }
-}
 
-// sign in  submission
-document.getElementById("login").addEventListener("submit", (e) => {
-  e.preventDefault();
-  checkemail();
-  checkpass();
+  if (hasEmpty) return;
 
-  // get data from sign up stored in localStorage
-  let email = document.getElementById("email-signin").value.trim();
-  let password = document.getElementById("password-signin").value;
-  let getuser = loadRegisteredUsers();
-  let user = getuser.find((u) => u.email === email && u.password === password);
+  let registeredUsers = loadRegisteredUsers();
+  let matchedUser = registeredUsers.find((u) => u.email === emailinput);
 
-  if (!user) {
-    document.getElementById("email-signin-error").innerText =
-      "@email or password is incorrect";
+  if (!matchedUser) {
+    emailError.innerText =
+      "This email is not registered. Please sign up first.";
+    passwordError.innerText = "";
     return;
   }
 
-  window.location.href = "../WEB/laptop.html";
+  if (matchedUser.password !== passwordinput) {
+    passwordError.innerText = "Incorrect password. Please try again.";
+    emailError.innerText = "";
+    return;
+  }
 
+  // Show success message briefly before redirecting
   let successEl = document.getElementById("success-signin");
-  successEl.innerText = "Sing in successful!";
+  successEl.innerText = " Log in successful!";
   successEl.style.cssText =
-    "display:block; color:#4ade80; font-weight:700; font-size:14px; text-align:center; margin-top:8px";
+    "display:block;color:#4ade80;font-weight:700;font-size:14px; text-align:center;margin-top:8px";
   setTimeout(() => {
-    successEl.style.display = "none";
-    successEl.innerText = "";
-    document.getElementById("login").reset();
-  }, 2000);
+    window.location.href = "../WEB/laptop.html";
+  }, 1500);
+}
+
+// sign in submission
+document.getElementById("login").addEventListener("submit", (e) => {
+  e.preventDefault();
+  chekcinput();
 });

@@ -99,8 +99,8 @@
                         placeholder=" " />
                     <label for="password"
                         class="absolute text-[20px] text-body duration-300 transform -translate-y-6 scale-75 top-8 origin-left peer-focus:s-0 peer-focus:text-fg-brand peer-placeholder-shown:scale-100 peer-focus:text-blue-950 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Password</label>
-                    <i class="fa-solid fa-lock absolute top-10 text-xl left-[90%] text-gray-500" id="toggle"
-                        onclick="sawpassword()"></i>
+                    <i class="fa-solid fa-lock absolute top-10 text-xl left-[90%] text-gray-500 cursor-pointer"
+                        id="toggle" onclick="sawpassword()"></i>
                     <small class="error" id="password-signin-error"></small>
                 </div>
                 <button type="submit"
@@ -120,7 +120,7 @@
             </div>
 
             <!--------------------------------------->
-
+            <!-- sign up part -->
             <form id="singup"
                 class=" w-100 h-[50vh] singup
                     px-10   border border-gray-400 rounded-[5px]
@@ -129,13 +129,14 @@
                 <div class=" text-2xl text-center py-5 font-bold uppercase">
                     <span>sign up</span>
                 </div>
+                <!-- email-input -->
                 <div class="out-container h-25 [&>input]:z-10 [&>label]:-z-10 [&>i]:z-10 ">
                     <input type="email" id="email-singup"
                         class="w-full text-[18px] text-heading bg-transparent border-0 border-b-2  border-b-blue-800 border-default-medium appearance-none focus:outline-none focus:ring-0 focus:border-brand peer"
                         placeholder=" " />
                     <label for="email"
                         class=" absolute text-sm text-left text-body duration-300 transform -translate-y-6  top-8 scale-75 origin-left peer-focus:s-0 peer-focus:text-fg-brand peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:text-blue-950 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Email</label>
-                    <i class="fa-solid fa-at absolute top-10 left-[90%] text-xl text-gray-500 "></i>
+                    <i class="fa-solid fa-at absolute top-10 left-[90%] text-xl text-gray-500"></i>
                     <small class="error" id="email-singup-error"></small>
                 </div>
                 <!-- password-input -->
@@ -145,8 +146,8 @@
                         placeholder="" />
                     <label for="password"
                         class="absolute text-[20px] text-body duration-300 transform -translate-y-6 scale-75 top-8 origin-left peer-focus:s-0 peer-focus:text-fg-brand peer-placeholder-shown:scale-100 peer-focus:text-blue-950 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Password</label>
-                    <i class="fa-solid fa-lock absolute top-10 left-[90%] text-xl text-gray-500 " id="toggle"
-                        onclick="sawpassword()"></i>
+                    <i class="fa-solid fa-lock absolute top-10 left-[90%] text-xl text-gray-500   cursor-pointer"
+                        id="toggle" onclick="sawpassword()"></i>
                     <small class="error" id="password-singup-error"></small>
                 </div>
                 <!-- re-password -->
@@ -156,8 +157,8 @@
                         placeholder="" />
                     <label for="password"
                         class="absolute text-[20px] text-body duration-300 transform -translate-y-6 scale-75 top-8 origin-left peer-focus:s-0 peer-focus:text-fg-brand peer-placeholder-shown:scale-100 peer-focus:text-blue-950 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Re-Password</label>
-                    <i class="fa-solid fa-lock absolute top-10 left-[90%] text-xl text-gray-500" id="toggle"
-                        onclick="sawpassword()"></i>
+                    <i class="fa-solid fa-lock absolute top-10 left-[90%] text-xl text-gray-500 cursor-pointer"
+                        id="toggle" onclick="sawpassword()"></i>
                     <small class="error" id="password-Re-error"></small>
                 </div>
 
