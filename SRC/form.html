@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -9,14 +9,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../SRC/input.css">
     <!-- script of javascript -->
-    <script src="../JS/showhide.js" defer></script>
-    <script src="../JS/validation.js" defer></script>
+    <script src="../JS/form/showhide.js" defer></script>
+    <script src="../JS/form/validation.js" defer></script>
     <style>
         * {
             margin: auto;
             box-sizing: border-box;
         }
+
     </style>
 </head>
 
@@ -79,7 +81,7 @@
                 [&>div>label]:font-medium [&>div>label]:text-[18px] [&>div>label]:text-gray-300 [&>div>input]:outline-none
                 [&>.outer-container]:absolute [&>.out-container]:w-full [&>.out-container]:text-center  [&>.out-container]:flex [&>.out-container]:relative">
                 <!-- email-login -->
-                <div class=" text-2xl text-center py-13 font-bold capitalize" id="login-title">
+                <div class=" text-2xl text-center py-13 font-bold uppercase" id="login-title">
                     <span>sign in </span>
                 </div>
                 <!-- input-email-singin -->
@@ -114,7 +116,7 @@
                     Don't have account /
                 </p>
                 <button
-                    class="btnsingup font-bold cursor-pointer border-none capitalize hover:underline hover:text-blue-600 inline ">
+                    class="btnsingup font-bold cursor-pointer border-none capitalize hover:underline hover:text-blue-600 inline " id ="btnsingup">
                     sign up
                 </button>
             </div>
@@ -168,10 +170,10 @@
                 </button>
                 <small id="success-signup"></small>
             </form>
-            <div class=" text-center show py-2.5 px-2.5 bg-mist-200  rounded-2xl">
+            <div class=" text-center show py-2.5 px-2.5 bg-mist-200  rounded-2xl ">
                 <p class="capitalize inline rounded-xl  text-center">Already have Account /</p>
                 <button
-                    class="sing-in font-bold text-center cursor-pointer hover:text-blue-600 hover:underline capitalize inline"
+                    class=" font-bold text-center cursor-pointer hover:text-blue-600 hover:underline capitalize inline"
                     id="sing-in">
                     Sign in
                 </button>
