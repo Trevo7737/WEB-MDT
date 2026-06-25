@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <script src="../JS/form/validation.js" defer></script>
 </head>
 <body>
   <!-- Sidebar -->
@@ -41,10 +42,6 @@
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h8M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
         <span>Categories</span>
       </a>
-      <a href="#" class="nav-item" data-page="users" id="nav-users">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="currentColor" stroke-width="2"/><circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-        <span>Users</span>
-      </a>
     </nav>
 
     <div class="sidebar-footer">
@@ -52,7 +49,7 @@
         <div class="avatar" id="sidebarAvatar">A</div>
         <div class="user-info">
           <div class="user-name" id="sidebarUserName">Admin User</div>
-          <div class="user-role">Super Admin</div>
+          <div class="user-role">Control</div>
         </div>
       </div>
     </div>
@@ -71,7 +68,7 @@
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/><path d="m21 21-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
           <input type="text" placeholder="Search..." id="globalSearch" />
         </div>
-        <div class="topbar-avatar" id="topbarAvatar">US</div>
+        <div class="topbar-avatar" id="topbarAvatar">A</div>
       </div>
     </header>
 
@@ -82,7 +79,7 @@
       <section class="page" id="page-dashboard">
         <div class="stats-grid">
           <div class="stat-card" style="--accent:#6366f1">
-            <div class="stat-icon" style="background:rgba(99,102,241,0.15)">
+            <div class="stat-icon" style="background:rgba(248, 248, 248, 0.15)">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M20 7H4a2 2 0 00-2 2v10a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z" stroke="#6366f1" stroke-width="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2" stroke="#6366f1" stroke-width="2"/></svg>
             </div>
             <div class="stat-info">
@@ -137,28 +134,6 @@
               </table>
             </div>
           </div>
-
-          <!-- Recent Users -->
-          <div class="card">
-            <div class="card-header">
-              <h2 class="card-title">Recent Users</h2>
-              <button class="btn btn-ghost btn-sm" onclick="navigateTo('users')">View All</button>
-            </div>
-            <div class="table-wrap">
-              <table class="data-table" id="dashUserTable">
-                <thead><tr><th>Name</th><th>Email</th><th>Role</th><th>Status</th></tr></thead>
-                <tbody id="dashUserBody"></tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-
-        <!-- Activity Feed -->
-        <div class="card mt-4">
-          <div class="card-header">
-            <h2 class="card-title">Recent Activity</h2>
-          </div>
-          <div class="activity-feed" id="activityFeed"></div>
         </div>
       </section>
 
@@ -205,218 +180,6 @@
         <div class="category-grid" id="categoryGrid"></div>
       </section>
 
-      <!-- ===== USERS PAGE ===== -->
-      <section class="page hidden" id="page-users">
-        <div class="page-toolbar">
-          <div class="toolbar-left">
-            <input type="text" class="search-input" placeholder="Search users..." id="userSearch" oninput="filterUsers()" />
-            <select class="filter-select" id="userRoleFilter" onchange="filterUsers()">
-              <option value="">All Roles</option>
-              <option value="Admin">Admin</option>
-              <option value="Editor">Editor</option>
-              <option value="Viewer">Viewer</option>
-            </select>
-          </div>
-          <button class="btn btn-primary" onclick="openModal('user')">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
-            Add User
-          </button>
-        </div>
-        <div class="card">
-          <div class="table-wrap">
-            <table class="data-table">
-              <thead>
-                <tr>
-                  <th>Avatar</th><th>Name</th><th>Email</th><th>Role</th><th>Status</th><th>Joined</th><th>Actions</th>
-                </tr>
-              </thead>
-              <tbody id="userTableBody"></tbody>
-            </table>
-          </div>
-          <div class="pagination" id="userPagination"></div>
-        </div>
-      </section>
-
-      <!-- ===== SETTINGS PAGE ===== -->
-      <section class="page hidden" id="page-settings">
-        <div class="settings-layout">
-          <div class="settings-sidebar">
-            <button class="settings-tab active" data-tab="general" onclick="switchSettingsTab(this,'general')">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z" stroke="currentColor" stroke-width="2"/></svg>
-              General
-            </button>
-            <button class="settings-tab" data-tab="profile" onclick="switchSettingsTab(this,'profile')">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2"/></svg>
-              Profile
-            </button>
-            <button class="settings-tab" data-tab="security" onclick="switchSettingsTab(this,'security')">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Security
-            </button>
-            <button class="settings-tab" data-tab="appearance" onclick="switchSettingsTab(this,'appearance')">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M12 8v8M8 12h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-              Appearance
-            </button>
-          </div>
-          <div class="settings-content">
-            <!-- General -->
-            <div class="settings-panel active" id="settings-general">
-              <h2 class="settings-panel-title">General Settings</h2>
-              <div class="settings-form">
-                <div class="form-group">
-                  <label>Site Name</label>
-                  <input type="text" class="form-control" id="siteName" value="NexusPanel" />
-                </div>
-                <div class="form-group">
-                  <label>Site Description</label>
-                  <textarea class="form-control" id="siteDesc" rows="3">A powerful user management dashboard.</textarea>
-                </div>
-                <div class="form-group">
-                  <label>Contact Email</label>
-                  <input type="email" class="form-control" id="contactEmail" value="admin@nexuspanel.io" />
-                </div>
-                <div class="form-group">
-                  <label>Timezone</label>
-                  <select class="form-control" id="timezone">
-                    <option value="UTC">UTC</option>
-                    <option value="Asia/Bangkok" selected>Asia/Bangkok (UTC+7)</option>
-                    <option value="America/New_York">America/New_York (UTC-5)</option>
-                    <option value="Europe/London">Europe/London (UTC+0)</option>
-                  </select>
-                </div>
-                <div class="toggle-setting">
-                  <div>
-                    <div class="toggle-label">Maintenance Mode</div>
-                    <div class="toggle-desc">Temporarily disable access to the site</div>
-                  </div>
-                  <label class="toggle-switch">
-                    <input type="checkbox" id="maintenanceMode" />
-                    <span class="toggle-slider"></span>
-                  </label>
-                </div>
-                <div class="toggle-setting">
-                  <div>
-                    <div class="toggle-label">Allow Registrations</div>
-                    <div class="toggle-desc">Let new users sign up</div>
-                  </div>
-                  <label class="toggle-switch">
-                    <input type="checkbox" id="allowReg" checked />
-                    <span class="toggle-slider"></span>
-                  </label>
-                </div>
-                <button class="btn btn-primary" onclick="saveSettings('general')">Save Changes</button>
-              </div>
-            </div>
-            <!-- Profile -->
-            <div class="settings-panel" id="settings-profile">
-              <h2 class="settings-panel-title">Profile Settings</h2>
-              <div class="settings-form">
-                <div class="profile-avatar-section">
-                  <div class="profile-avatar-large" id="profileAvatarLarge">A</div>
-                  <button class="btn btn-ghost" onclick="changeAvatar()">Change Avatar</button>
-                </div>
-                <div class="form-group">
-                  <label>Full Name</label>
-                  <input type="text" class="form-control" id="profileName" value="Admin User" oninput="updateSidebarName(this.value)" />
-                </div>
-                <div class="form-group">
-                  <label>Email Address</label>
-                  <input type="email" class="form-control" id="profileEmail" value="admin@nexuspanel.io" />
-                </div>
-                <div class="form-group">
-                  <label>Phone</label>
-                  <input type="tel" class="form-control" id="profilePhone" value="+1 (555) 000-0000" />
-                </div>
-                <div class="form-group">
-                  <label>Bio</label>
-                  <textarea class="form-control" id="profileBio" rows="3">System administrator with full access.</textarea>
-                </div>
-                <button class="btn btn-primary" onclick="saveSettings('profile')">Update Profile</button>
-              </div>
-            </div>
-            <!-- Security -->
-            <div class="settings-panel" id="settings-security">
-              <h2 class="settings-panel-title">Security Settings</h2>
-              <div class="settings-form">
-                <div class="form-group">
-                  <label>Current Password</label>
-                  <input type="password" class="form-control" id="currentPass" placeholder="Enter current password" />
-                </div>
-                <div class="form-group">
-                  <label>New Password</label>
-                  <input type="password" class="form-control" id="newPass" placeholder="Enter new password" />
-                </div>
-                <div class="form-group">
-                  <label>Confirm New Password</label>
-                  <input type="password" class="form-control" id="confirmPass" placeholder="Confirm new password" />
-                </div>
-                <div class="toggle-setting">
-                  <div>
-                    <div class="toggle-label">Two-Factor Authentication</div>
-                    <div class="toggle-desc">Add extra layer of security</div>
-                  </div>
-                  <label class="toggle-switch">
-                    <input type="checkbox" id="twoFactor" />
-                    <span class="toggle-slider"></span>
-                  </label>
-                </div>
-                <div class="toggle-setting">
-                  <div>
-                    <div class="toggle-label">Login Notifications</div>
-                    <div class="toggle-desc">Get notified on new logins</div>
-                  </div>
-                  <label class="toggle-switch">
-                    <input type="checkbox" id="loginNotif" checked />
-                    <span class="toggle-slider"></span>
-                  </label>
-                </div>
-                <button class="btn btn-primary" onclick="saveSettings('security')">Update Password</button>
-              </div>
-            </div>
-            <!-- Appearance -->
-            <div class="settings-panel" id="settings-appearance">
-              <h2 class="settings-panel-title">Appearance</h2>
-              <div class="settings-form">
-                <div class="form-group">
-                  <label>Theme</label>
-                  <div class="theme-options">
-                    <button class="theme-btn active" id="themeDark" onclick="setTheme('dark',this)">
-                      <div class="theme-preview dark-preview"></div>
-                      Dark
-                    </button>
-                    <button class="theme-btn" id="themeLight" onclick="setTheme('light',this)">
-                      <div class="theme-preview light-preview"></div>
-                      Light
-                    </button>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label>Accent Color</label>
-                  <div class="color-palette">
-                    <button class="color-dot active" style="background:#6366f1" data-color="#6366f1" onclick="setAccent('#6366f1',this)"></button>
-                    <button class="color-dot" style="background:#8b5cf6" data-color="#8b5cf6" onclick="setAccent('#8b5cf6',this)"></button>
-                    <button class="color-dot" style="background:#06b6d4" data-color="#06b6d4" onclick="setAccent('#06b6d4',this)"></button>
-                    <button class="color-dot" style="background:#10b981" data-color="#10b981" onclick="setAccent('#10b981',this)"></button>
-                    <button class="color-dot" style="background:#f59e0b" data-color="#f59e0b" onclick="setAccent('#f59e0b',this)"></button>
-                    <button class="color-dot" style="background:#ef4444" data-color="#ef4444" onclick="setAccent('#ef4444',this)"></button>
-                  </div>
-                </div>
-                <div class="toggle-setting">
-                  <div>
-                    <div class="toggle-label">Compact Mode</div>
-                    <div class="toggle-desc">Reduce spacing for more content</div>
-                  </div>
-                  <label class="toggle-switch">
-                    <input type="checkbox" id="compactMode" onchange="toggleCompact(this)" />
-                    <span class="toggle-slider"></span>
-                  </label>
-                </div>
-                <button class="btn btn-primary" onclick="saveSettings('appearance')">Save Appearance</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   </main>
 

@@ -1,4 +1,4 @@
-// dashboard  for antigravity 
+// dashboard  for antigravity
 const DB = {
   _key: "nexuspanel_db",
 
@@ -710,7 +710,7 @@ function renderCategoryGrid() {
   const grid = document.getElementById("categoryGrid");
   if (!grid) return;
 
-  if (filteredCategories.length === 0) {
+  if (!filteredCategories.length) {
     grid.innerHTML = `<div class="empty-state" style="grid-column:1/-1">
       <svg width="48" height="48" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h8M4 18h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
       <p>No categories found.</p>
@@ -718,12 +718,12 @@ function renderCategoryGrid() {
     return;
   }
 
+  const getCount = (name) =>
+    state.products.filter((p) => p.category === name).length;
+
   grid.innerHTML = filteredCategories
-    .map((c) => {
-      const prodCount = state.products.filter(
-        (p) => p.category === c.name,
-      ).length;
-      return `
+    .map(
+      (c) => `
     <div class="category-card" style="--cat-color:${c.color}">
       <div class="category-strip" style="background:${c.color}"></div>
       <div class="category-card-top">
@@ -740,11 +740,11 @@ function renderCategoryGrid() {
       <div class="category-name">${escapeHtml(c.name)}</div>
       <div class="category-desc">${escapeHtml(c.description) || "No description."}</div>
       <div class="category-meta">
-        <span style="color:${c.color};font-weight:600">${prodCount} products</span>
+        <span style="color:${c.color};font-weight:600">${getCount(c.name)} products</span>
         ${statusBadge(c.status)}
       </div>
-    </div>`;
-    })
+    </div>`,
+    )
     .join("");
 }
 
@@ -1048,23 +1048,6 @@ function roleBadge(role) {
     Viewer: "role-viewer",
   };
   return `<span class="role-badge ${map[role] || "role-viewer"}">${role}</span>`;
-}
-
-function stringToColor(str) {
-  const colors = [
-    "#6366f1",
-    "#8b5cf6",
-    "#06b6d4",
-    "#10b981",
-    "#f59e0b",
-    "#ef4444",
-    "#ec4899",
-    "#14b8a6",
-  ];
-  let hash = 0;
-  for (let i = 0; i < str.length; i++)
-    hash = str.charCodeAt(i) + ((hash << 5) - hash);
-  return colors[Math.abs(hash) % colors.length];
 }
 
 function getCategoryEmoji(category) {

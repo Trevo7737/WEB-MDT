@@ -4,7 +4,7 @@ document
   .addEventListener("input", validationemail);
 
 document
-  .getElementById("password-singup")   
+  .getElementById("password-singup")
   .addEventListener("input", validationpassword);
 document
   .getElementById("password-Re-singup")
@@ -62,6 +62,7 @@ function validationconfirm() {
 function loadRegisteredUsers() {
   return JSON.parse(localStorage.getItem("registeredUsers")) || [];
 }
+
 loadRegisteredUsers();
 
 // Sign-up form submission
@@ -108,7 +109,7 @@ document.getElementById("singup").addEventListener("submit", (e) => {
       successEl.style.display = "none";
       successEl.innerText = "";
       document.getElementById("singup").reset();
-    }, 3000);
+    }, 600);
   }
 });
 
@@ -118,21 +119,21 @@ function chekcinput() {
   let emailError = document.getElementById("email-signin-error");
   let passwordError = document.getElementById("password-signin-error");
 
-  let hasEmpty = false;
+  let hasempty =false;
+
   if (emailinput === "") {
     emailError.innerText = "Email is required";
-    hasEmpty = true;
+    hasempty = true;
   } else {
     emailError.innerText = "";
   }
   if (passwordinput === "") {
     passwordError.innerText = "Password is required";
-    hasEmpty = true;
+    hasempty = true;
   } else {
     passwordError.innerText = "";
   }
 
-  if (hasEmpty) return;
 
   let registeredUsers = loadRegisteredUsers();
   let matchedUser = registeredUsers.find((u) => u.email === emailinput);
@@ -150,18 +151,24 @@ function chekcinput() {
     return;
   }
 
-  // Show success message briefly before redirecting
   let successEl = document.getElementById("success-signin");
   successEl.innerText = " Log in successful!";
   successEl.style.cssText =
     "display:block;color:#4ade80;font-weight:700;font-size:14px; text-align:center;margin-top:8px";
   setTimeout(() => {
+      document.getElementById("login").reset();
+    successEl.innerText = "";
     window.location.href = "../SRC/index.html";
   }, 500);
 }
 
-// sign in submission
 document.getElementById("login").addEventListener("submit", (e) => {
   e.preventDefault();
   chekcinput();
 });
+
+const registeredUsers  = localStorage.getItem("registeredUsers");
+
+const init = registeredUsers.email.slice(0,2);
+
+document.getElementById(topbarAvatar).textContent= init;

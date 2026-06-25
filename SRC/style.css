@@ -385,6 +385,8 @@ body {
 
 .card-header {
   display: flex; align-items: center; justify-content: space-between;
+  width: 100%;
+  height: auto;
   padding: 18px 20px;
   border-bottom: 1px solid var(--border);
 }
@@ -465,7 +467,7 @@ body {
 /* =================== DASHBOARD GRID =================== */
 .dashboard-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr ;
   gap: 20px;
 }
 
