@@ -1052,5 +1052,5 @@ function roleBadge(role) {
 
 function getCategoryEmoji(category) {
   const cat = state.categories.find((c) => c.name === category);
-  return cat ? cat.icon : "📦";
+  return cat ? cat.icon : "";
 }

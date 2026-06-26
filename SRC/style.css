@@ -1,7 +1,7 @@
 
 
 :root {
-  --bg-base:      #0b0d14;
+  --bg-base:      #f5f5f5;
   --bg-surface:   #12151f;
   --bg-elevated:  #1a1d2e;
   --bg-hover:     #1f2235;
@@ -35,7 +35,6 @@
   --transition-slow: 0.35s cubic-bezier(0.4,0,0.2,1);
 }
 
-/* Light theme */
 body.light {
   --bg-base:      #f0f2f8;
   --bg-surface:   #ffffff;
@@ -72,7 +71,7 @@ body {
 .sidebar {
   width: var(--sidebar-w);
   min-height: 100vh;
-  background: var(--bg-surface);
+  background: var(--bg-base);
   border-right: 1px solid var(--border);
   display: flex;
   flex-direction: column;
@@ -92,7 +91,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 20px 16px;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 3px solid var(--text-secondary);
   min-height: 68px;
 }
 
@@ -217,7 +216,7 @@ body {
 /* Sidebar Footer */
 .sidebar-footer {
   padding: 16px;
-  border-top: 1px solid var(--border);
+  border-top: 3px solid var(--border);
 }
 
 .user-profile {
@@ -408,7 +407,7 @@ body {
 }
 
 .stat-card {
-  background: var(--bg-surface);
+  background: var(--bg-base );
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 22px;
@@ -556,7 +555,7 @@ body {
 .user-avatar-sm {
   width: 34px; height: 34px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent), #8b5cf6);
+  background: linear-gradient(135deg, var(--accent), #494650);
   display: flex; align-items: center; justify-content: center;
   color: white; font-weight: 600; font-size: 0.8rem;
   flex-shrink: 0;

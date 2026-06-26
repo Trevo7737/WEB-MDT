@@ -113,6 +113,9 @@ document.getElementById("singup").addEventListener("submit", (e) => {
   }
 });
 
+
+
+
 function chekcinput() {
   let emailinput = document.getElementById("email-signin").value.trim();
   let passwordinput = document.getElementById("password-signin").value;
@@ -167,8 +170,9 @@ document.getElementById("login").addEventListener("submit", (e) => {
   chekcinput();
 });
 
-const registeredUsers  = localStorage.getItem("registeredUsers");
 
-const init = registeredUsers.email.slice(0,2);
+const  email = localStorage.getItem("registeredUsers");
 
-document.getElementById(topbarAvatar).textContent= init;
+const init = email.email[0].toUpperCase;
+
+document.getElementById("topbarAvator").textContent = init;
