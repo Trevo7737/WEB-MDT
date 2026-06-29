@@ -9,13 +9,6 @@ const backlogin = document.getElementById("backlogin");
 const btnsingin = document.getElementById("sing-in");
 const showsing = document.querySelector(".show");
 const showbtnsingin = document.querySelector(".showbtnsingin");
-// open && close form
-openlogin.onclick = () => {
-  containerlogin.classList.add("active");
-};
-closeform.onclick = () => {
-  containerlogin.classList.toggle("active");
-};
 
 // show singup form
 
@@ -23,7 +16,6 @@ btnregister.addEventListener("click", function (e) {
   e.preventDefault();
   displayregister.style.display = "block";
   backlogin.style.display = "block";
-  closeform.style.visibility = "hidden";
   displaylogin.style.display = "none";
   showsing.style.display = "block";
   showbtnsingin.style.display = "none";
@@ -35,7 +27,6 @@ backlogin.addEventListener("click", function (e) {
   e.preventDefault();
   displayregister.style.display = "none";
   backlogin.style.display = "none";
-  closeform.style.visibility = "visible";
   displaylogin.style.display = "block";
   showsing.style.display = "none";
   showbtnsingin.style.display = "block";
@@ -47,7 +38,6 @@ btnsingin.onclick = (e) => {
   e.preventDefault();
   displayregister.style.display = "none";
   backlogin.style.display = "none";
-  closeform.style.visibility = "visible";
   displaylogin.style.display = "block";
   showsing.style.display = "none";
   showbtnsingin.style.display = "block";

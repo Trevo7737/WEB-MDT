@@ -22,23 +22,32 @@
     transform: translate(50px, 50px) scale(1.1);
   }
 }
+
+@keyframes me {
+  0% {
+    transition: all 0.3s ease-in-out;
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transition: all 0.3s ease-in-out;
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
 /* -------------display-login--------------- */
 .container-login {
-  visibility: hidden;
-  transform: translatey(-100%);
-  transition: all 0.3s ease-in-out;
-  opacity: 0;
+  animation-name: me;
+  animation-duration: 2s;
 }
 
+/* ------------------------- */
 .active {
-  visibility: visible;
+
   transition: all 0.3s ease-in-out;
   transform: translatey(0%);
   opacity: 1;
 }
-
-/* ------------------------- */
-
 .active2 {
   transform: translatey(0%);
   opacity: 1;
@@ -54,7 +63,7 @@
 }
 
 /* back to login btn */
-.backlogin{
+.backlogin {
   display: none;
 }
 
@@ -70,7 +79,7 @@
   display: none;
 }
 
-.showbtnsingin{
+.showbtnsingin {
   display: block;
 }
 
