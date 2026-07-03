@@ -1,5 +1,5 @@
 const DB = {
-  _key: "nexuspanel_db",
+  _key: "data",
 
   defaults() {
     return {
@@ -76,8 +76,6 @@ function navigateTo(page) {
     dashboard: "Dashboard",
     products: "Products",
     categories: "Categories",
-    users: "Users",
-    settings: "Settings",
   };
   document.getElementById("pageTitle").textContent = titles[page] || page;
   document.getElementById("breadcrumb").textContent =
@@ -171,9 +169,8 @@ document.getElementById("globalSearch").addEventListener("input", function () {
   else if ("dashboard".includes(q)) navigateTo("dashboard");
 });
 
-// ============================================================
 // INIT
-// ============================================================
+
 function init() {
   navigateTo("dashboard");
 }
@@ -182,7 +179,7 @@ init();
 
 // ============================================================
 // DASHBOARD
-// ============================================================
+
 function renderDashboard() {
   updateStats();
 
@@ -284,9 +281,9 @@ function logActivity(type, entity, name) {
   if (currentPage === "dashboard") renderActivity();
 }
 
-// ============================================================
+
 // PRODUCT CRUD
-// ============================================================
+
 
 function prepareProductModal(id) {
   clearProductForm();
@@ -546,9 +543,9 @@ function populateCategoryFilter() {
     sel.appendChild(opt);
   });
 }
-// ============================================================
+
 // TOAST SYSTEM
-// ============================================================
+
 function showToast(message, type = "success") {
   const container = document.getElementById("toastContainer");
   const icons = { success: "✓", error: "✕", info: "ℹ", warning: "⚠" };
@@ -562,9 +559,9 @@ function showToast(message, type = "success") {
     setTimeout(() => toast.remove(), 300);
   }, 3500);
 }
-// ============================================================
+
 // PAGINATION
-// ============================================================
+
 function renderPagination(containerId, total, current, onChange) {
   const container = document.getElementById(containerId);
   if (!container) return;
@@ -594,9 +591,8 @@ function renderPagination(containerId, total, current, onChange) {
   container.innerHTML = html;
 }
 
-// ============================================================
 // CATEGORY CRUD
-// ============================================================
+
 function prepareCategoryModal(id) {
   clearCategoryForm();
   if (id) {
@@ -746,9 +742,8 @@ function renderCategoryGrid() {
     .join("");
 }
 
-// ============================================================
 // SETTINGS
-// ============================================================
+
 function switchSettingsTab(btn, tab) {
   document
     .querySelectorAll(".settings-tab")
@@ -827,9 +822,9 @@ function toggleCompact(cb) {
   document.body.classList.toggle("compact", cb.checked);
 }
 
-// ============================================================
+
 // USER CRUD
-// ============================================================
+
 function prepareUserModal(id) {
   clearUserForm();
   const pwdGroup = document.getElementById("userPasswordGroup");
@@ -886,7 +881,6 @@ function saveUser() {
     return;
   }
 
-  // Duplicate email check
   const dupCheck = state.users.find(
     (u) => u.email === email && u.id !== parseInt(id),
   );
@@ -1011,9 +1005,9 @@ function renderUserTable() {
     renderUserTable();
   });
 }
-// ============================================================
+
 // UTILITY HELPERS
-// ============================================================
+
 function escapeHtml(str) {
   if (!str) return "";
   return String(str).replace(
