@@ -89,3 +89,196 @@
   position: absolute;
   top: 80px;
 }
+
+/* ============================================
+   RESPONSIVE STYLES — ALL DEVICES
+   ============================================ */
+
+/* --- MOBILE: up to 640px --- */
+@media (max-width: 640px) {
+  /* Main login container: full width, auto height, single column */
+  .container-login {
+    max-width: 100% !important;
+    width: 95% !important;
+    height: auto !important;
+    min-height: 90vh;
+    flex-direction: column !important;
+    top: 5px !important;
+    border-radius: 16px !important;
+    padding: 0 !important;
+  }
+
+  /* Left panel (forms side): take full width */
+  .container-login > div:first-child {
+    width: 100% !important;
+    border-radius: 16px !important;
+    padding-bottom: 16px;
+  }
+
+  /* Hide the right-side image panel on mobile */
+  .img-lefthand {
+    display: none !important;
+  }
+
+  /* Title section: smaller text, tighter padding */
+  #title {
+    padding: 20px 20px 10px !important;
+  }
+  #title h1 {
+    font-size: 1.4rem !important;
+  }
+  #title span {
+    font-size: 0.85rem !important;
+  }
+
+  /* Login & signup forms: auto width, auto height */
+  .login,
+  .singup {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    padding: 16px 20px !important;
+    border: none !important;
+    border-top: 1px solid rgba(156, 163, 175, 0.3) !important;
+    border-radius: 0 !important;
+  }
+
+  /* Form title */
+  #login-title {
+    padding-top: 16px !important;
+    padding-bottom: 16px !important;
+    font-size: 1.2rem !important;
+  }
+
+  /* Input containers */
+  .out-container {
+    height: auto !important;
+    min-height: 70px;
+    margin-bottom: 8px;
+  }
+
+  /* Icon positioning inside inputs */
+  .out-container i {
+    left: 85% !important;
+  }
+
+  /* Back button: reposition for mobile */
+  .backlogin {
+    left: auto !important;
+    right: 16px !important;
+    top: 12px !important;
+    font-size: 16px !important;
+  }
+
+  /* Bottom toggle buttons */
+  .showbtnsingin,
+  .show {
+    margin: 8px 20px !important;
+    font-size: 0.85rem;
+  }
+
+  /* Orbs: reduce size */
+  .container-login ~ div,
+  body > div:first-child > div {
+    transform: scale(0.5);
+  }
+}
+
+/* --- SMALL TABLETS: 641px to 768px --- */
+@media (min-width: 641px) and (max-width: 768px) {
+  .container-login {
+    max-width: 90% !important;
+    width: 90% !important;
+    height: auto !important;
+    min-height: 85vh;
+    flex-direction: column !important;
+    top: 8px !important;
+  }
+
+  .container-login > div:first-child {
+    width: 100% !important;
+    border-radius: 20px 20px 0 0 !important;
+  }
+
+  /* Hide image on small tablets too */
+  .img-lefthand {
+    display: none !important;
+  }
+
+  .login,
+  .singup {
+    width: 100% !important;
+    max-width: 420px !important;
+    height: auto !important;
+    padding: 20px 24px !important;
+  }
+
+  #title {
+    padding: 24px 24px 12px !important;
+  }
+
+  .backlogin {
+    left: auto !important;
+    right: 20px !important;
+    top: 14px !important;
+  }
+
+  .showbtnsingin,
+  .show {
+    margin: 8px 24px !important;
+  }
+}
+
+/* --- TABLETS: 769px to 1024px --- */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container-login {
+    max-width: 85% !important;
+    width: 85% !important;
+    height: 80vh !important;
+  }
+
+  /* Forms: flexible width */
+  .login,
+  .singup {
+    width: 100% !important;
+    max-width: 380px !important;
+    height: auto !important;
+    min-height: 45vh;
+    padding: 16px 24px !important;
+  }
+
+  /* Image panel: reduce, show on tablets */
+  .img-lefthand {
+    width: 40% !important;
+  }
+
+  .container-login > div:first-child {
+    width: 60% !important;
+  }
+
+  .backlogin {
+    left: auto !important;
+    right: 20px !important;
+  }
+}
+
+/* --- SMALL DESKTOPS: 1025px to 1280px --- */
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .container-login {
+    max-width: 70% !important;
+    height: 85vh;
+  }
+
+  .login,
+  .singup {
+    width: 100% !important;
+    max-width: 380px !important;
+  }
+}
+
+/* --- FIX: Ensure body doesn't overflow horizontally on any device --- */
+@media (max-width: 1024px) {
+  body {
+    overflow-x: hidden !important;
+  }
+}

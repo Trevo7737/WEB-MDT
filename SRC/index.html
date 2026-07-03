@@ -44,26 +44,24 @@
     <!-- header  part  of  webpage -->
 
     <!-- the part of log in form  -->
-    <div class="container-login max-w-1/2  relative  h-[80vh] rounded-[20px] top-10 
+    <div class="container-login max-w-1/2 relative h-[80vh] rounded-[20px] top-10 
          bg-white/3 backdrop-blur-[20px] border border-white/10 border-t-white/20 border-l-white/20
          shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5),inset_0_0_0_1px_rgba(255,255,255,0.05)] flex" id="container-login">
 
         <div class=" w-1/2 h-full rounded-tl-[20px] rounded-bl-[20px]  flex flex-wrap">
-            <div class=" w-full h-auto font-poppins  text-left [&>span]:text-gray-400 px-10 py-5 " id="title">
-                <h1 class="text-3xl font-semibold uppercase text-blue-950">welcome  back,<br> Product system</h1>
+            <div class=" w-full h-auto  font-poppins  text-left [&>span]:text-gray-400 px-10 py-5 " id="title">
+                <h1 class="text-3xl font-semibold uppercase text-blue-950 ">welcome  back,<br> Product system</h1>
                 <span>Enter your Email to access your Control Panel  Product System...</span>
             </div>
-            <!-- <button class="absolute flex top-5 left-[95%] cursor-pointer gap-1 text-[20px]  closeform" id="closeform">
-                <i class="fa-solid fa-x"></i>
-            </button> -->
+
             <button class="absolute flex top-5 left-[87%] cursor-pointer gap-1 text-[20px]  backlogin" id="backlogin">
                 <i class="fa-solid fa-arrow-left"></i>
                 Back
             </button>
             <!-- login-part -->
             <form id="login"
-                class=" w-100 h-[50vh] login
-                px-10 border border-gray-400 rounded-[5px] 
+                class=" w-100  login
+                px-10   border border-gray-400 rounded-[5px] 
                 [&>div>label]:font-medium [&>div>label]:text-[18px] [&>div>label]:text-gray-300 [&>div>input]:outline-none
                 [&>.outer-container]:absolute [&>.out-container]:w-full [&>.out-container]:text-center  [&>.out-container]:flex [&>.out-container]:relative">
                 <!-- email-login -->
@@ -71,7 +69,7 @@
                     <span>sign in </span>
                 </div>
                 <!-- input-email-singin -->
-                <div class="out-container h-25   [&>input]:z-10 [&>label]:-z-10 [&>i]:z-10">
+                <div class="out-container h-25  [&>input]:z-10 [&>label]:-z-10 [&>i]:z-10">
                     <input type="email" id="email-signin"
                         class="  w-full text-[18px] text-heading bg-transparent border-0 border-b-2  border-b-blue-800 border-default-medium appearance-none focus:outline-none focus:ring-0 focus:border-brand peer"
                         placeholder=" " />
@@ -81,7 +79,7 @@
                     <small class="error " id="email-signin-error"></small>
                 </div>
                 <!-- input-password-singin -->
-                <div class="out-container h-30 [&>input]:z-10 [&>label]:-z-10 [&>i]:z-10 ">
+                <div class="out-container h-25 [&>input]:z-10 [&>label]:-z-10 [&>i]:z-10 ">
                     <input type="password" id="password-signin" maxlength="20"
                         class=" w-full text-[18px] text-heading bg-transparent border-0 border-b-2 border-b-blue-800 border-default-medium appearance-none focus:outline-none focus:ring-0 focus:border-brand peer  showpassword"
                         placeholder=" " />
@@ -97,7 +95,7 @@
                 </button>
                 <small id="success-signin"></small>
             </form>
-            <div class=" text-center showbtnsingin  py-2.5 px-2.5 bg-mist-200  rounded-2xl">
+            <div class=" text-center showbtnsingin  py-3.5 px-2.5 bg-mist-200  rounded-2xl">
                 <p class="capitalize cursor-none inline">
                     Don't have account /
                 </p>
@@ -110,7 +108,7 @@
             <!--------------------------------------->
             <!-- sign up part -->
             <form id="singup"
-                class=" w-100 h-[50vh] singup
+                class=" w-100 h-[50vh] singup 
                     px-10   border border-gray-400 rounded-[5px]
                     [&>div>label]:font-medium [&>div>label]:text-[18px] [&>div>label]:text-gray-300 [&>div>input]:outline-none
                     [&>.outer-container]:absolute [&>.out-container]:w-full  [&>.out-container]:flex [&>.out-container]:relative ">
@@ -166,8 +164,7 @@
             </div>
             <!----------------------------------------- -->
         </div>
-        <div class="img-lefthand py-10 relative top-10  w-1/2  h-150    bg-[url(iMG/img1.jpg)] bg-center bg-cover bg-no-repeat 
-            rounded-tl-4xl  rounded-bl-4xl ">
+        <div class="img-lefthand  xl:py-10 relative top-10   w-1/2  h-[80%]   bg-[url(iMG/img1.jpg)]  bg-center bg-cover bg-no-repeat  rounded-tl-4xl  rounded-bl-4xl  ">
             <!-- image on right part  -->
         </div>
     </div>
