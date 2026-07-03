@@ -161,7 +161,7 @@ function chekcinput() {
   setTimeout(() => {
       document.getElementById("login").reset();
     successEl.innerText = "";
-    window.location.href = "../SRC/index.html";
+    window.location.href = "../src/dashboard.html";
   }, 500);
 }
 
