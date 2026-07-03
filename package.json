@@ -4,6 +4,11 @@
     "tailwindcss": "^4.2.2"
   },
   "scripts": {
-    "dev": "npx @tailwindcss/cli -i ./SRC/input.css -o ./SRC/output.css --watch"
+    "dev": "npx @tailwindcss/cli -i ./SRC/input.css -o ./SRC/output.css --watch",
+    "build": "echo Building...",
+    "deploy": "gh-pages -d SRC"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
   }
 }
