@@ -1,0 +1,688 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Management Dashboard</title>
+    <meta
+      name="description"
+      content="A powerful user management dashboard with CRUD operations for products, categories, users, and settings."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css"/>
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="logo">
+          <!-- <div class="logo-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div> -->
+          <span class="logo-text">
+            <img src="iMG/setec.png" alt="setec-logo" style="width: 200px;">
+          </span>
+        </div>
+        <button
+          class="sidebar-toggle"
+          id="sidebarToggle"
+          aria-label="Toggle sidebar"
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M3 12h18M3 6h18M3 18h18"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-section-label">Main</div>
+        <a
+          href="#"
+          class="nav-item active"
+          data-page="dashboard"
+          id="nav-dashboard"
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <rect
+              x="3"
+              y="3"
+              width="7"
+              height="7"
+              rx="1"
+              stroke="currentColor"
+              stroke-width="2"
+            />
+            <rect
+              x="14"
+              y="3"
+              width="7"
+              height="7"
+              rx="1"
+              stroke="currentColor"
+              stroke-width="2"
+            />
+            <rect
+              x="14"
+              y="14"
+              width="7"
+              height="7"
+              rx="1"
+              stroke="currentColor"
+              stroke-width="2"
+            />
+            <rect
+              x="3"
+              y="14"
+              width="7"
+              height="7"
+              rx="1"
+              stroke="currentColor"
+              stroke-width="2"
+            />
+          </svg>
+          <span>Dashboard</span>
+          <span class="badge badge-new">New</span>
+        </a>
+
+        <div class="nav-section-label">Management</div>
+        <a href="#" class="nav-item" data-page="products" id="nav-products">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M20 7H4a2 2 0 00-2 2v10a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z"
+              stroke="currentColor"
+              stroke-width="2"
+            />
+            <path
+              d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"
+              stroke="currentColor"
+              stroke-width="2"
+            />
+          </svg>
+          <span>Products</span>
+        </a>
+        <a href="#" class="nav-item" data-page="categories" id="nav-categories">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M4 6h16M4 12h8M4 18h16"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </svg>
+          <span>Categories</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-profile">
+          <div class="avatar" id="sidebarAvatar">A</div>
+          <div class="user-info">
+            <div class="user-name" id="sidebarUserName">Admin User</div>
+            <div class="user-role">Control</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content" id="mainContent">
+      <!-- Top Bar -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <h1 class="page-title" id="pageTitle">Dashboard</h1>
+          <div class="breadcrumb" id="breadcrumb">Home / Dashboard</div>
+        </div>
+        <div class="topbar-right">
+          <div class="search-box">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <circle
+                cx="11"
+                cy="11"
+                r="8"
+                stroke="currentColor"
+                stroke-width="2"
+              />
+              <path
+                d="m21 21-4.35-4.35"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+            <input type="text" placeholder="Search..." id="globalSearch" />
+          </div>
+          <div class="topbar-avatar" id="topbarAvatar">AU</div>
+        </div>
+      </header>
+
+      <!-- Pages -->
+      <div class="page-content">
+        <!--DASHBOARD PAGE -->
+        <section class="page" id="page-dashboard">
+          <div class="stats-grid">
+            <div class="stat-card" style="--accent: #6366f1">
+              <div
+                class="stat-icon"
+                style="background: rgba(248, 248, 248, 0.15)"
+              >
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M20 7H4a2 2 0 00-2 2v10a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z"
+                    stroke="#6366f1"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"
+                    stroke="#6366f1"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+              <div class="stat-info">
+                <div class="stat-label">Total Products</div>
+                <div class="stat-value" id="statProducts">0</div>
+                <div class="stat-change positive">+12% this month</div>
+              </div>
+            </div>
+            <div class="stat-card" style="--accent: #8b5cf6">
+              <div
+                class="stat-icon"
+                style="background: rgba(139, 92, 246, 0.15)"
+              >
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M4 6h16M4 12h8M4 18h16"
+                    stroke="#8b5cf6"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+              <div class="stat-info">
+                <div class="stat-label">Categories</div>
+                <div class="stat-value" id="statCategories">0</div>
+                <div class="stat-change positive">+3 new</div>
+              </div>
+            </div>
+            <div class="stat-card" style="--accent: #06b6d4">
+              <div
+                class="stat-icon"
+                style="background: rgba(6, 182, 212, 0.15)"
+              >
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"
+                    stroke="#06b6d4"
+                    stroke-width="2"
+                  />
+                  <circle
+                    cx="9"
+                    cy="7"
+                    r="4"
+                    stroke="#06b6d4"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"
+                    stroke="#06b6d4"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+              <div class="stat-info">
+                <div class="stat-label">Total Users</div>
+                <div class="stat-value" id="statUsers">0</div>
+                <div class="stat-change positive">+8% this month</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="dashboard-grid">
+            <!-- Recent Products -->
+            <div class="card">
+              <div class="card-header">
+                <h2 class="card-title">Recent Products</h2>
+                <button
+                  class="btn btn-ghost btn-sm"
+                  onclick="navigateTo('products')"
+                >
+                  View All
+                </button>
+              </div>
+              <div class="table-wrap">
+                <table class="data-table" id="dashProductTable">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Category</th>
+                      <th>Price</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody id="dashProductBody"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== PRODUCTS PAGE ===== -->
+        <section class="page hidden" id="page-products">
+          <div class="page-toolbar">
+            <div class="toolbar-left">
+              <input
+                type="text"
+                class="search-input"
+                placeholder="Search products..."
+                id="productSearch"
+                oninput="filterProducts()"
+              />
+              <select
+                class="filter-select"
+                id="productCatFilter"
+                onchange="filterProducts()"
+              >
+                <option value="">All Categories</option>
+              </select>
+            </div>
+            <button class="btn btn-primary" onclick="openModal('product')">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M12 5v14M5 12h14"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                />
+              </svg>
+              Add Product
+            </button>
+          </div>
+          <div class="card">
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Stock</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="productTableBody"></tbody>
+              </table>
+            </div>
+            <div class="pagination" id="productPagination"></div>
+          </div>
+        </section>
+
+        <!-- ===== CATEGORIES PAGE ===== -->
+        <section class="page hidden" id="page-categories">
+          <div class="page-toolbar">
+            <div class="toolbar-left">
+              <input
+                type="text"
+                class="search-input"
+                placeholder="Search categories..."
+                id="categorySearch"
+                oninput="filterCategories()"
+              />
+            </div>
+            <button class="btn btn-primary" onclick="openModal('category')">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M12 5v14M5 12h14"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                />
+              </svg>
+              Add Category
+            </button>
+          </div>
+          <div class="category-grid" id="categoryGrid"></div>
+        </section>
+      </div>
+    </main>
+
+    <!-- ===== MODALS ===== -->
+    <div class="modal-overlay" id="modalOverlay" onclick="closeModal()"></div>
+
+    <!-- Product Modal -->
+    <div class="modal" id="productModal" role="dialog" aria-modal="true">
+      <div class="modal-header">
+        <h3 class="modal-title" id="productModalTitle">Add Product</h3>
+        <button class="modal-close" onclick="closeModal()" aria-label="Close">
+          &times;
+        </button>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" id="productId" />
+        <div class="form-row">
+          <div class="form-group">
+            <label>Product Name *</label>
+            <input
+              type="text"
+              class="form-control"
+              id="productName"
+              placeholder="Enter product name"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label>Category *</label>
+            <select class="form-control" id="productCategory" required>
+              <option value="">Select category</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Price *</label>
+            <input
+              type="number"
+              class="form-control"
+              id="productPrice"
+              placeholder="0.00"
+              min="0"
+              step="0.01"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label>Stock *</label>
+            <input
+              type="number"
+              class="form-control"
+              id="productStock"
+              placeholder="0"
+              min="0"
+              required
+            />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Description</label>
+          <textarea
+            class="form-control"
+            id="productDescription"
+            rows="3"
+            placeholder="Product description..."
+          ></textarea>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Status</label>
+            <select class="form-control" id="productStatus">
+              <option value="Active">Active</option>
+              <option value="Inactive">Inactive</option>
+              <option value="Draft">Draft</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Image URL</label>
+            <input
+              type="text"
+              class="form-control"
+              id="productImage"
+              placeholder="https://..."
+            />
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-ghost" onclick="closeModal()">Cancel</button>
+        <button
+          class="btn btn-primary"
+          onclick="saveProduct()"
+          id="saveProductBtn"
+        >
+          Add Product
+        </button>
+      </div>
+    </div>
+
+    <!-- Category Modal -->
+    <div class="modal" id="categoryModal" role="dialog" aria-modal="true">
+      <div class="modal-header">
+        <h3 class="modal-title" id="categoryModalTitle">Add Category</h3>
+        <button class="modal-close" onclick="closeModal()" aria-label="Close">
+          &times;
+        </button>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" id="categoryId" />
+        <div class="form-group">
+          <label>Category Name *</label>
+          <input
+            type="text"
+            class="form-control"
+            id="categoryName"
+            placeholder="Enter category name"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label>Description</label>
+          <textarea
+            class="form-control"
+            id="categoryDescription"
+            rows="3"
+            placeholder="Category description..."
+          ></textarea>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Color</label>
+            <input
+              type="color"
+              class="form-control color-input"
+              id="categoryColor"
+              value="#6366f1"
+            />
+          </div>
+          <div class="form-group">
+            <label>Icon (emoji)</label>
+            <input
+              type="text"
+              class="form-control"
+              id="categoryIcon"
+              placeholder="📦"
+              maxlength="4"
+            />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Status</label>
+          <select class="form-control" id="categoryStatus">
+            <option value="Active">Active</option>
+            <option value="Inactive">Inactive</option>
+          </select>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-ghost" onclick="closeModal()">Cancel</button>
+        <button
+          class="btn btn-primary"
+          onclick="saveCategory()"
+          id="saveCategoryBtn"
+        >
+          Add Category
+        </button>
+      </div>
+    </div>
+
+    <!-- User Modal -->
+    <div class="modal" id="userModal" role="dialog" aria-modal="true">
+      <div class="modal-header">
+        <h3 class="modal-title" id="userModalTitle">Add User</h3>
+        <button class="modal-close" onclick="closeModal()" aria-label="Close">
+          &times;
+        </button>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" id="userId" />
+        <div class="form-row">
+          <div class="form-group">
+            <label>Full Name *</label>
+            <input
+              type="text"
+              class="form-control"
+              id="userName"
+              placeholder="Enter full name"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label>Email *</label>
+            <input
+              type="email"
+              class="form-control"
+              id="userEmail"
+              placeholder="user@example.com"
+              required
+            />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Role</label>
+            <select class="form-control" id="userRole">
+              <option value="Viewer">Viewer</option>
+              <option value="Editor">Editor</option>
+              <option value="Admin">Admin</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Phone</label>
+            <input
+              type="tel"
+              class="form-control"
+              id="userPhone"
+              placeholder="+1 (555) 000-0000"
+            />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Department</label>
+            <input
+              type="text"
+              class="form-control"
+              id="userDept"
+              placeholder="Engineering, Marketing..."
+            />
+          </div>
+          <div class="form-group">
+            <label>Status</label>
+            <select class="form-control" id="userStatus">
+              <option value="Active">Active</option>
+              <option value="Inactive">Inactive</option>
+              <option value="Pending">Pending</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group" id="userPasswordGroup">
+          <label>Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="userPassword"
+            placeholder="Min. 8 characters"
+          />
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-ghost" onclick="closeModal()">Cancel</button>
+        <button class="btn btn-primary" onclick="saveUser()" id="saveUserBtn">
+          Add User
+        </button>
+      </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div
+      class="modal modal-sm"
+      id="deleteModal"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div class="modal-header danger">
+        <h3 class="modal-title">Confirm Delete</h3>
+        <button class="modal-close" onclick="closeModal()" aria-label="Close">
+          &times;
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="delete-warning">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"
+              stroke="#ef4444"
+              stroke-width="2"
+            />
+            <line
+              x1="12"
+              y1="9"
+              x2="12"
+              y2="13"
+              stroke="#ef4444"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+            <line
+              x1="12"
+              y1="17"
+              x2="12.01"
+              y2="17"
+              stroke="#ef4444"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </svg>
+          <p id="deleteMessage">
+            Are you sure you want to delete this item? This action cannot be
+            undone.
+          </p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-ghost" onclick="closeModal()">Cancel</button>
+        <button
+          class="btn btn-danger"
+          onclick="confirmDelete()"
+          id="confirmDeleteBtn"
+        >
+          Delete
+        </button>
+      </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="./JS/app.js"></script>
+    <script src="./JS/validation.js"></script>
+  </body>
+</html>
