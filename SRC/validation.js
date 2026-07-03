@@ -170,9 +170,3 @@ document.getElementById("login").addEventListener("submit", (e) => {
   chekcinput();
 });
 
-
-const  email = localStorage.getItem("registeredUsers");
-
-const init = email.email[0].toUpperCase;
-
-document.getElementById("topbarAvator").textContent = init;
