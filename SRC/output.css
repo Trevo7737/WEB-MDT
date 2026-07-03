@@ -453,8 +453,8 @@
       background-color: color-mix(in oklab, var(--color-white) 3%, transparent);
     }
   }
-  .bg-\[url\(\.\.\/iMG\/img1\.jpg\)\] {
-    background-image: url(../iMG/img1.jpg);
+  .bg-\[url\(iMG\/img1\.jpg\)\] {
+    background-image: url(iMG/img1.jpg);
   }
   .bg-cover {
     background-size: cover;
