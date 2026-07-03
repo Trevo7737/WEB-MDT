@@ -1,4 +1,3 @@
-
 const DB = {
   _key: "nexuspanel_db",
 
@@ -90,7 +89,6 @@ function navigateTo(page) {
     filterProducts();
   }
   if (page === "categories") filterCategories();
-  if (page === "users") filterUsers();
 }
 
 document.querySelectorAll(".nav-item").forEach((item) => {
