@@ -63,13 +63,22 @@ function loadRegisteredUsers() {
   return JSON.parse(localStorage.getItem("registeredUsers")) || [];
 }
 
-loadRegisteredUsers();
+
+function seedDemoUsers() {
+  let registeredUsers = loadRegisteredUsers();
+  if (!registeredUsers.some((u) => u.email === "superadmin@gmail.com")) {
+    registeredUsers.push({ email: "superadmin@gmail.com", password: "admin123" });
+    localStorage.setItem("registeredUsers", JSON.stringify(registeredUsers));
+  }
+}
+ 
+seedDemoUsers();
+
 
 // Sign-up form submission
 
 document.getElementById("singup").addEventListener("submit", (e) => {
   e.preventDefault();
-
   validationemail();
   validationpassword();
   validationconfirm();
@@ -122,7 +131,7 @@ function chekcinput() {
   let emailError = document.getElementById("email-signin-error");
   let passwordError = document.getElementById("password-signin-error");
 
-  let hasempty =false;
+  let hasempty = false;
 
   if (emailinput === "") {
     emailError.innerText = "Email is required";
